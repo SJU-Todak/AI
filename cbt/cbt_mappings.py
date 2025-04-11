@@ -1,4 +1,4 @@
-# cbt/cbt_mappings.py
+# 사용안하는파일
 
 # Plutchik 감정 전략 매핑
 emotion_strategies = {

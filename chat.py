@@ -1,8 +1,3 @@
-"""
-실행 코드
-python3 chat.py --output_file results/result1.json --persona_type persona_20s_friend --chat_id chat123 --user_id user123
-"""
-
 import json
 from pathlib import Path
 from agents.client_agent import ClientAgent
@@ -10,7 +5,7 @@ from agents.counselor_agent import CounselorAgent
 from agents.evaluator_agent import EvaluatorAgent
 from agents.sub_llm import SubLLMAgent
 from config import get_config, set_openai_api_key
-from cbt.cbt_mappings import emotion_strategies, cognitive_distortion_strategies
+#from cbt.cbt_mappings import emotion_strategies, cognitive_distortion_strategies
 from DB import get_chat_log, save_chat_log, save_user_info, get_user_info  # DB.py에서 import
 
 # API 키 설정
@@ -87,31 +82,30 @@ class TherapySimulation:
         for turn in range(self.max_turns):
             print(f"--- Turn {turn + 1} ---")
 
-            # 1. 상담자 응답 생성
-            counselor_msg = self.counselor_agent.generate_response(self.history)
-            self.history.append({"role": "counselor", "message": counselor_msg})
-            print("Counselor:", counselor_msg)
-
             # 직접 내담자 역할을 할 수 있는 부분 (현재는 사용자가 직접 입력)
             client_msg = input(f"{self.name}: ")
             self.history.append({"role": "client", "message": client_msg})
             print(f"{self.name}: {client_msg}")
 
+            # 상담자 응답 생성
+            counselor_msg = self.counselor_agent.generate_response(self.history, client_msg)
+            self.history.append({"role": "counselor", "message": counselor_msg})
+            print("Counselor:", counselor_msg)
+
             # 3. SubLLM 분석 (감정 및 인지 왜곡 탐지)
             analysis_result = self.subllm_agent.analyze(client_msg)
             emotion = analysis_result.get("감정", "")
             distortion = analysis_result.get("인지왜곡", "")
-            total_strategy = analysis_result.get("총합_CBT전략", "")  # 여기서 total_strategy 사용
+            # total_strategy = analysis_result.get("총합_CBT전략", "")  # 여기서 total_strategy 사용
             
             print(f"Emotion detected: {emotion}")
             print(f"Cognitive Distortion detected: {distortion}")
-            print(f"CBT Strategy: {total_strategy}")
             print()
 
             # 4. 최신 분석 결과로 상담자 에이전트 재정의
             self.counselor_agent = CounselorAgent(
                 client_info=f"{self.name}, {self.age}세, {self.gender}성",
-                total_strategy=total_strategy,
+                total_strategy="",  # total_strategy 명시적으로 전달
                 persona_type=self.persona_type,
                 emotion=emotion,
                 distortion=distortion
@@ -129,9 +123,8 @@ class TherapySimulation:
         # 7. 결과 반환
         return {
             "persona": self.persona_type,
-            "cbt_strategy": total_strategy,
-            "cognitive_distortion": distortion,
-            "emotion": emotion,
+            "cognitive_distortion": self.counselor_agent.distortion,
+            "emotion": self.counselor_agent.emotion,
             "history": self.history,
             "evaluation": evaluation_result
         }
@@ -156,4 +149,3 @@ if __name__ == "__main__":
     Path(args.output_file).parent.mkdir(parents=True, exist_ok=True)
     with open(args.output_file, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-
