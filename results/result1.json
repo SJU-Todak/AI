@@ -1,112 +1,177 @@
 {
-  "persona": "persona_20s_friend",
-  "cbt_strategy": "감정 전략을 찾을 수 없습니다. | 없음에 대한 전략을 찾을 수 없습니다.",
+  "persona": "persona_55살김서연",
   "cognitive_distortion": "없음",
   "emotion": "없음",
   "history": [
     {
       "role": "user",
-      "message": "나에대해 알고있니",
-      "timestamp": "2025-04-03T17:39:02.754073"
+      "message": "안녕 처음 만나서 반가워",
+      "timestamp": "2025-04-11T01:32:12.955290"
     },
     {
       "role": "bot",
-      "message": "안녕하세요, 정원님! 오늘 이렇게 이야기하게 돼서 정말 기뻐요. 😊 어떤 고민이 있으신지, 혹은 요즘 기분이 어떤지 말씀해 주실 수 있어요? 당신의 이야기를 듣고 싶어요. \n\n이 공간은 안전하니까, 마음 편히 털어놓아도 괜찮아요!",
-      "timestamp": "2025-04-03T17:39:02.754073"
+      "message": "상담사: \"안녕하세요! 저도 만나서 반가워요. 오늘 어떻게 도와드릴까요?\"",
+      "timestamp": "2025-04-11T01:32:12.955290"
     },
     {
       "role": "user",
-      "message": "나의 정보에대해 알고있는게있으면 말해봐",
-      "timestamp": "2025-04-03T17:39:21.167418"
+      "message": "음 나의 기분을 잘 들어주면 좋을 것 같아",
+      "timestamp": "2025-04-11T01:32:42.197536"
     },
     {
       "role": "bot",
-      "message": "정원님, 물론이죠! 😊 제가 당신에 대해 조금 더 알게 되면 좋겠어요. 당신의 감정이나 생각에 대해 이야기하는 것이 중요하니까요. 현재 어떤 기분인지, 또는 어떤 생각이 드는지 나눠주실 수 있어요? 지금은 특별히 어떤 고민이 있는지 궁금해요. 이 공간은 당신의 이야기를 들어주기 위해 마련된 곳이니까 편하게 이야기해 주세요!",
-      "timestamp": "2025-04-03T17:39:21.167418"
+      "message": "물론입니다. 당신의 기분이나 생각을 나누고 싶다면 언제든지 말씀해 주세요. 어떤 일이 있었는지, 어떤 기분인지 궁금합니다. 당신의 이야기를 듣고 싶어요.",
+      "timestamp": "2025-04-11T01:32:42.197536"
     },
     {
       "role": "user",
-      "message": "는 면접에서 떨어졌어 이점 기억해줘",
-      "timestamp": "2025-04-03T17:39:37.145266"
+      "message": "우선 너의 소개부터해줘",
+      "timestamp": "2025-04-11T01:32:55.820059"
     },
     {
       "role": "bot",
-      "message": "정원님, 당신이 나에 대해 알고 싶어하는 마음을 이해해요! 😊 우리는 서로를 조금 더 알아가는 과정에 있어요. 지금은 당신이 어떤 생각이나 감정을 가지고 있는지 이야기해 주는 게 좋을 것 같아요. \n\n혹시 최근에 겪은 일이나, 생각하고 있는 것들이 있다면 나눠줄 수 있어요? 어떤 것이라도 괜찮으니까, 편하게 이야기해 주세요. 이 공간은 당신의 이야기를 듣고 지지하기 위해 마련된 곳이니까요! 💖",
-      "timestamp": "2025-04-03T17:39:37.145266"
+      "message": "안녕하세요! 저는 당신의 상담사입니다. 당신과의 상담을 통해 당신의 이야기를 듣고, 필요한 지원을 제공하고자 합니다. 우선, 당신에 대해 좀 더 알고 싶습니다. 어떤 점을 이야기해주시면 좋을까요? 일상, 관심사, 고민이나 목표 등 어떤 것이든 괜찮습니다. 편하게 말씀해 주세요!",
+      "timestamp": "2025-04-11T01:32:55.820059"
     },
     {
       "role": "user",
-      "message": "exitexit",
-      "timestamp": "2025-04-03T17:39:47.387218"
+      "message": "어제 채용상담회를 갔는데 취업을 하기 위해서 준비것들이 너 많아서 착잡해",
+      "timestamp": "2025-04-11T01:33:35.133981"
     },
     {
       "role": "bot",
-      "message": "정원님, 면접에서 떨어진 경험이 정말 힘들었겠어요. 😔 그런 상황은 누구에게나 슬픔과 실망감을 줄 수 있어요. 당신의 감정이 정말 이해가 가요. 이럴 때는 자신을 너무 비난하지 않는 것이 중요하답니다. \n\n혹시 그 면접에서 어떤 점이 힘들었는지, 아니면 어떤 생각이 드셨는지 나눌 수 있을까요? 그 경험을 통해 느낀 감정이나 생각들을 함께 이야기해보면 좋을 것 같아요. 그리고 혹시 그 외에도 다른 긍정적인 경험들이 있었다면, 그것도 함께 나눠볼 수 있을까요? 😊",
-      "timestamp": "2025-04-03T17:39:47.387218"
+      "message": "안녕하세요, 상담사님.\n\n사용자가 어제 채용상담회에 다녀왔습니다. 그 경험이 매우 소중했지만, 현재 취업을 위한 준비가 많아 마음이 착잡한 감정을 느끼고 있다고 합니다. 이러한 복잡한 감정을 이해하고, 사용자가 느끼는 압박감이나 불안감을 덜어줄 수 있는 방법에 대해 상담해 주시면 좋겠습니다. 감사합니다.",
+      "timestamp": "2025-04-11T01:33:35.133981"
     },
     {
       "role": "user",
-      "message": "/END",
-      "timestamp": "2025-04-03T17:39:55.764079"
+      "message": "지금 누구한테 말하는거야?",
+      "timestamp": "2025-04-11T01:34:24.217581"
     },
     {
       "role": "bot",
-      "message": "정원님, 면접에서 떨어진 경험이 정말 안타깝고 힘들었을 것 같아요. 😔 그런 상황은 누구에게나 스트레스를 주고, 자신에 대한 의문을 가질 수도 있죠. 기분이 어떠셨는지, 어떤 생각이 드셨는지 조금 더 이야기해 볼까요? \n\n이때는 자신에게 너무 harsh하게 대하지 않는 것이 중요해요. 실패는 배우는 과정의 일부분이니까요. 혹시 그 면접에서 느낀 감정이나 생각들 중에서 기억에 남는 것들이 있나요? 그런 것들을 나누면 더 나은 방향으로 나아갈 수 있을 거예요. 😊",
-      "timestamp": "2025-04-03T17:39:55.764079"
-    },
-    {
-      "role": "user",
-      "message": "[/END]",
-      "timestamp": "2025-04-03T17:40:15.836461"
-    },
-    {
-      "role": "bot",
-      "message": "정원님, 면접에서 떨어진 일이 정말 힘들었겠어요. 😔 그런 경험은 누구에게나 슬픔과 실망감을 주니까요. 지금 기분이 어떠신지 궁금해요. 이럴 때는 자신에게 너무 가혹하지 않도록 하는 게 중요해요. \n\n혹시 면접을 준비하면서 느꼈던 압박감이나, 떨어진 후에 떠오른 생각들이 있었나요? 이런 감정을 나누는 것이 도움이 될 수 있을 거예요. 이 공간은 당신의 이야기를 듣고 지지하는 곳이니까, 편하게 이야기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:40:15.836461"
-    },
-    {
-      "role": "user",
-      "message": "나에대해 알고있는게있으면 말해봐",
-      "timestamp": "2025-04-03T17:40:53.718659"
-    },
-    {
-      "role": "bot",
-      "message": "정원님, 정말 힘든 순간을 겪고 계시겠어요. 😔 면접에서 떨어진 후에 어떤 감정을 느끼셨는지, 혹은 어떤 생각들이 떠오르셨는지 이야기해 주실 수 있을까요? 그런 감정들을 나누는 게 도움이 될 수 있어요. \n\n또한, 혹시 면접 준비를 하면서 스스로에게 어떤 기대를 했는지, 또는 어떤 압박감이 있었는지도 궁금해요. 이 모든 게 당신의 경험이니까, 편하게 이야기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:40:53.718659"
+      "message": "저는 AI 언어 모델로, 당신과 대화하고 있습니다. 궁금한 점이나 이야기하고 싶은 주제가 있다면 말씀해 주세요!",
+      "timestamp": "2025-04-11T01:34:24.217581"
     },
     {
       "role": "user",
       "message": "[/END]",
-      "timestamp": "2025-04-03T17:41:06.526324"
+      "timestamp": "2025-04-11T01:34:40.705965"
     },
     {
       "role": "bot",
-      "message": "정원님, 다시 이야기해 주셔서 고마워요! 😊 면접에서 떨어진 일로 마음이 힘든 것 같아요. 이런 경험은 정말 누구에게나 어려운 일이고, 감정이 복잡하게 얽힐 수 있죠. 지금 어떤 생각이나 감정이 드는지 나눠주실 수 있어요? \n\n혹시 떨어진 후에 자신에 대해 어떤 생각이 들었는지도 궁금해요. 예를 들어, '나는 충분히 잘하지 못했다'는 생각이 드셨나요? 혹은 다른 감정들이 있었나요? 이걸 이야기하는 게 정말 도움이 될 수 있어요. 편하게 얘기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:41:06.526324"
+      "message": "물론입니다. 상담사에게 전달할 내용을 작성하시려면, 다음과 같은 형식을 고려해 보실 수 있습니다:\n\n---\n\n**상담 요청서**\n\n안녕하세요, 상담사님.\n\n저는 현재 [본인의 상황이나 문제에 대한 간단한 설명]을 겪고 있습니다. 이러한 문제로 인해 [느끼는 감정이나 고민]이 커지고 있습니다. \n\n상담을 통해 [해결하고 싶은 구체적인 목표나 기대하는 바]를 이루고 싶습니다. 또한, [상담사에게 요청하고 싶은 사항이나 추가적으로 알고 싶은 정보]에 대해서도 말씀드리고 싶습니다.\n\n부디 저의 이야기를 들어주시고, 필요한 조언을 주시면 감사하겠습니다.\n\n감사합니다.\n\n[본인 이름 또는 익명 요청]\n\n---\n\n이런 형식으로 작성하면 상담사가 여러분의 상황을 보다 잘 이해하고, 적절한 도움을 줄 수 있을 것입니다. 필요에 따라 내용을 수정하여 사용하세요.",
+      "timestamp": "2025-04-11T01:34:40.705965"
     },
     {
-      "role": "counselor",
-      "message": "정원님, 다시 이야기해 주셔서 정말 고마워요! 😊 면접에서 떨어진 경험이 정말 힘들었겠어요. 그런 상황에서 느끼는 감정은 정말 복잡할 수 있죠. 지금 어떤 기분이 드는지, 어떤 생각들이 떠오르는지 조금 더 나눠볼까요?\n\n혹시 “나는 충분히 잘하지 못했다”는 생각이 드셨나요? 이런 생각은 많은 사람들이 겪는 일이에요. 우리는 자신에게 너무 가혹해질 때가 많거든요. 그런 감정이나 생각이 드는 이유를 함께 살펴보면 좋을 것 같아요. 편하게 이야기해 주세요! 💖"
+      "role": "user",
+      "message": "안녕",
+      "timestamp": "2025-04-11T23:06:51.383897"
+    },
+    {
+      "role": "bot",
+      "message": "안녕, 도산아! 다시 만나서 반가워요. 어제 채용상담회에 다녀왔다는 이야기를 들으니, 정말 다양한 준비가 필요해서 착잡한 기분이 드는 것 같아요. 그런 기분이 드는 건 정말 자연스러운 일이에요. 혹시 힘든 부분이 있다면 나눠줄 수 있을까요? 함께 이야기해보면 조금 더 편해질 수 있을 거예요!",
+      "timestamp": "2025-04-11T23:06:51.383897"
+    },
+    {
+      "role": "user",
+      "message": "지금은 괜찮은데",
+      "timestamp": "2025-04-11T23:07:19.248686"
+    },
+    {
+      "role": "bot",
+      "message": "안녕, 도산아! 지금 괜찮다고 하니 정말 다행이야. 그런 기분이 계속 유지되기를 바랄게. 혹시 나중에 다시 고민이 생긴다면 언제든지 이야기해줘. 함께 나누면 더 가벼워질 수 있을 거야!",
+      "timestamp": "2025-04-11T23:07:19.248686"
+    },
+    {
+      "role": "user",
+      "message": "오늘은 독서실에서 공부도 하고 독후감도 제출하고 열심히 살아서 기분이 좋아",
+      "timestamp": "2025-04-11T23:08:05.018932"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 오늘 독서실에서 열심히 공부하고 독후감도 제출해서 기분이 좋다니 정말 멋져! 그런 작은 성취들이 쌓여서 큰 힘이 될 거야. 계속해서 이런 좋은 기분을 유지할 수 있도록, 자신에게 칭찬도 해주고 작은 목표를 계속 세워보는 건 어때? 언제나 응원할게!",
+      "timestamp": "2025-04-11T23:08:05.018932"
+    },
+    {
+      "role": "user",
+      "message": "매일 아침 책을 한 단락씩 읽어볼게",
+      "timestamp": "2025-04-11T23:09:18.133040"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 매일 아침 책을 한 단락씩 읽어보겠다고 결심한 거 정말 멋져! 그건 아주 좋은 습관이 될 거야. 작은 목표를 설정하고 꾸준히 실천하는 게 기분도 좋게 하고, 자신감을 높여줄 거야. 계속 이렇게 좋은 기분을 이어가길 바랄게! 😊📚",
+      "timestamp": "2025-04-11T23:09:18.133040"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-11T23:09:31.854312"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 매일 아침 책을 한 단락씩 읽겠다는 목표를 세운 거 정말 멋져! 그런 작은 변화가 큰 힘이 될 수 있어. 기분이 좋다고 하니, 그 좋은 에너지를 계속 유지할 수 있도록 응원할게! 😊📖",
+      "timestamp": "2025-04-11T23:09:31.854312"
+    },
+    {
+      "role": "user",
+      "message": "ㅇㅏㄴ안녕",
+      "timestamp": "2025-04-14T17:14:17.164306"
+    },
+    {
+      "role": "bot",
+      "message": "안녕, 도산아! 다시 만나서 반가워. 지금 느끼는 감정이 어떤지 궁금해. 혹시 최근에 느꼈던 기분이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야.",
+      "timestamp": "2025-04-14T17:14:17.164306"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-14T17:14:51.865794"
+    },
+    {
+      "role": "bot",
+      "message": "안녕, 도산아! 다시 만나서 반가워. 지금은 어떤 기분인지 궁금해. 최근에 느꼈던 감정이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야. 😊",
+      "timestamp": "2025-04-14T17:14:51.865794"
     },
     {
       "role": "client",
-      "message": "아니야 다른 면접들도 많은데 다시 힘내볼게"
+      "message": "안녕"
     },
     {
       "role": "counselor",
-      "message": "정원님, 그렇게 긍정적으로 생각해 주셔서 정말 기뻐요! 😊 여러 면접을 준비하고 다시 도전하겠다는 마음이 참 멋지네요. 실패는 하나의 경험일 뿐이니까, 다시 힘내는 모습이 정말 인상적이에요!\n\n그런데 혹시 면접을 준비하면서 어떤 점들이 즐거웠거나 보람찼는지 생각해 보신 적 있으신가요? 긍정적인 경험이나 작은 성취도 함께 음미해 보는 건 정말 좋거든요. 이런 것들이 정원님에게 힘이 될 수 있을 거예요! 💖 어떤 것들이 떠오르나요?"
+      "message": "안녕, 도산아! 다시 만났네. 지금 어떤 기분인지 궁금해. 혹시 최근에 느꼈던 감정이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야. 😊"
+    },
+    {
+      "role": "client",
+      "message": "오늘은 늦잠을 자고 비가와서 집에서 공부중이야 여유롭다"
+    },
+    {
+      "role": "counselor",
+      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 이런 여유로운 시간은 스스로를 돌아보고, 마음의 평화를 찾는 데 큰 도움이 될 수 있어. 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊"
     },
     {
       "role": "client",
       "message": ""
+    },
+    {
+      "role": "counselor",
+      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 그런 여유로운 시간은 자신을 돌아보는 데 큰 도움이 될 수 있어. 혹시 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊"
+    },
+    {
+      "role": "client",
+      "message": "[/END]"
+    },
+    {
+      "role": "counselor",
+      "message": ""
     }
   ],
   "evaluation": {
-    "general_1": "4, The therapist generally grasped the client's feelings and concerns about the interview situation and encouraged the client to express their thoughts and emotions. However, there were moments where the therapist could have connected more deeply with the client's subtle communications about resilience and hope, indicating a good but not fully comprehensive understanding of the client's internal reality.",
-    "general_2": "4, The therapist demonstrated a good ability to grasp the client’s feelings and experiences, particularly regarding the disappointment from the interview. However, there were instances where the therapist's responses did not fully acknowledge the client's explicit statements or nuances, such as the client expressing a willingness to move forward. While the therapist provided empathetic and supportive responses, they could improve in reflecting the client's thoughts more directly. Overall, the therapist maintained a generally effective therapeutic relationship but showed room for improvement in fully understanding and responding to the client's subtle communications.",
-    "general_3": "4, The therapist demonstrated a good ability to grasp the client's feelings and reflections, particularly regarding the emotional impact of the job interview experience. They encouraged the client to explore their feelings and thoughts while providing a supportive environment. However, the therapist did not effectively establish clear goals or help the client prioritize their concerns, which prevented a higher score. Overall, they showed good listening and empathic skills but lacked in facilitating a more structured process for goal setting and decision-making.",
-    "cbt_1": "5, The therapist effectively utilized guided discovery techniques throughout the session, encouraging the client to reflect on their feelings and experiences related to the interview setback. The use of open-ended questions and supportive prompts facilitated the client’s self-exploration. However, there were instances where the therapist could have further deepened the exploration of the client’s thoughts and feelings, resulting in a slight gap from achieving an excellent balance in all interventions.",
-    "cbt_2": "4, The therapist generally facilitated the client's exploration of thoughts and feelings related to the interview experience. However, while the therapist asked several guiding questions and encouraged reflection, there were moments where the client’s responses were not fully engaged with, and the therapist predominantly redirected back to general exploration without deeply addressing specific cognitive patterns or behaviors. Thus, while the therapist used guided discovery to some extent, the effectiveness and depth of exploration were insufficient to warrant a higher score.",
-    "cbt_3": "4, The therapist primarily utilized supportive questioning and encouraged the client to explore their feelings and thoughts regarding their experience with the interview. However, while there was an emphasis on guided discovery, the therapist's approach could have been more focused on examining evidence or considering alternatives in a more structured way. The overall effectiveness was adequate, but there were moments where the exploration of new perspectives could have been deeper."
+    "general_1": "4, The therapist generally seemed to grasp the patient's feelings and concerns about their emotional state and experiences, responding appropriately to what the client explicitly shared. However, there were moments where the therapist's responses were somewhat generic and did not fully delve into the nuances of the client's feelings, showing a limited ability to respond to more subtle communication. Thus, while the therapist demonstrated good listening and empathic skills, there is room for improvement in fully understanding and addressing the client's deeper emotional landscape.",
+    "general_2": "4, The therapist generally seemed to grasp the patient’s internal reality as reflected by what the patient explicitly said, but there were moments where the therapist's responses lacked depth in exploring the client's feelings and experiences, particularly in addressing the client's emotions more subtly. Although the therapist showed good listening and empathic skills overall, there were opportunities for deeper engagement that were not fully realized.",
+    "general_3": "4, The therapist demonstrated a good ability to grasp the patient's internal reality, reflecting back the client's feelings and thoughts effectively. However, there were moments where the therapist's responses lacked deeper engagement with the client's more subtle emotional nuances, such as not fully exploring the client's feelings about their job search or the pressures they mentioned. This indicates a solid but not exceptional level of empathic skill and understanding.",
+    "cbt_1": "4, The therapist primarily focused on supportive interactions and encouraged the client to express feelings and thoughts. However, there was a lack of deeper exploration through guided discovery techniques that could help the client gain new insights or perspectives. The questioning was somewhat supportive but did not effectively facilitate the client's self-reflection to a significant degree, which is why a score of 4 is appropriate.",
+    "cbt_2": "4, The therapist primarily provided supportive responses and encouraged the client to share their feelings and experiences. However, there was a lack of deeper exploration into the client's cognition or behavior that needed addressing, as well as minimal use of guided discovery techniques. The therapist's approach was mostly supportive but did not effectively help the client gain new perspectives or insights. Therefore, a score of 4 is appropriate, as the therapist did not fully meet the criteria for guided discovery.",
+    "cbt_3": "4, The therapist mostly provided supportive responses and encouraged the client to share their feelings and experiences. However, there was a lack of clear guided discovery techniques to help the client examine their thoughts and feelings more critically. The conversation did not sufficiently prompt the client to explore alternative perspectives or weigh the advantages and disadvantages of their feelings or situations."
   }
 }

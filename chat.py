@@ -11,6 +11,7 @@ from DB import get_chat_log, save_chat_log, save_user_info, get_user_info  # DB.
 # API 키 설정
 set_openai_api_key()
 from pymongo import MongoClient
+from datetime import datetime
 
 # 연결 문자열 사용
 client = MongoClient("mongodb+srv://j2982477:EZ6t7LEsGEYmCiJK"
@@ -132,7 +133,7 @@ class TherapySimulation:
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output_file", required=True)
+    parser.add_argument("--output_file", default=None)
     parser.add_argument("--persona_type", required=True)
     parser.add_argument("--chat_id", required=True)  # chat_id 추가
     parser.add_argument("--user_id", required=True)  # 사용자 이름
@@ -145,6 +146,10 @@ if __name__ == "__main__":
             user_id=args.user_id, 
         )    
     result = sim.run()
+
+    if args.output_file is None:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        args.output_file = f"results/result_{timestamp}.json"
 
     Path(args.output_file).parent.mkdir(parents=True, exist_ok=True)
     with open(args.output_file, "w", encoding="utf-8") as f:

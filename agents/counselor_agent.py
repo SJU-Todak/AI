@@ -39,6 +39,11 @@ class CounselorAgent:
             latest_client_message=latest_client_message
         )
 
+        # ✅ 프롬프트 출력 추가
+        print("\n🔍 [DEBUG] 최종 counselor_prompt:\n")
+        print(filled_prompt)
+        print("🔚 [END OF PROMPT]\n")
+
         response = self.llm.invoke(filled_prompt)
 
         if isinstance(response, AIMessage):
