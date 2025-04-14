@@ -1,7 +1,7 @@
 {
   "persona": "persona_55살김서연",
   "cognitive_distortion": "없음",
-  "emotion": "없음",
+  "emotion": "",
   "history": [
     {
       "role": "user",
@@ -134,28 +134,92 @@
       "timestamp": "2025-04-14T17:14:51.865794"
     },
     {
+      "role": "user",
+      "message": "안녕",
+      "timestamp": "2025-04-14T17:17:55.700884"
+    },
+    {
+      "role": "bot",
+      "message": "안녕, 도산아! 다시 만났네. 지금 어떤 기분인지 궁금해. 혹시 최근에 느꼈던 감정이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야. 😊",
+      "timestamp": "2025-04-14T17:17:55.700884"
+    },
+    {
+      "role": "user",
+      "message": "오늘은 늦잠을 자고 비가와서 집에서 공부중이야 여유롭다",
+      "timestamp": "2025-04-14T17:18:52.694665"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 이런 여유로운 시간은 스스로를 돌아보고, 마음의 평화를 찾는 데 큰 도움이 될 수 있어. 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊",
+      "timestamp": "2025-04-14T17:18:52.694665"
+    },
+    {
+      "role": "user",
+      "message": "",
+      "timestamp": "2025-04-14T17:20:50.173232"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 그런 여유로운 시간은 자신을 돌아보는 데 큰 도움이 될 수 있어. 혹시 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊",
+      "timestamp": "2025-04-14T17:20:50.173232"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-14T17:21:44.866478"
+    },
+    {
+      "role": "bot",
+      "message": "도산아, 오늘 비 오는 날 집에서 여유롭게 공부하고 있다는 말이 참 좋네! 그런 여유로운 시간이 자신을 돌아보는 데 큰 도움이 될 수 있어. 혹시 그 시간에 어떤 책을 읽거나 공부하고 싶은 내용이 있다면 나눠줄 수 있을까? 😊",
+      "timestamp": "2025-04-14T17:21:44.866478"
+    },
+    {
       "role": "client",
       "message": "안녕"
     },
     {
       "role": "counselor",
-      "message": "안녕, 도산아! 다시 만났네. 지금 어떤 기분인지 궁금해. 혹시 최근에 느꼈던 감정이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야. 😊"
+      "message": "안녕, 도산아! 다시 만나서 반가워. 오늘 어떤 기분인지 궁금해. 혹시 최근에 느꼈던 감정이나 생각이 있다면 나눠줄 수 있을까? 함께 이야기하면 더 편해질 수 있을 거야. 😊"
     },
     {
       "role": "client",
-      "message": "오늘은 늦잠을 자고 비가와서 집에서 공부중이야 여유롭다"
+      "message": "여자친구랑 대화가 안되는 느낌이야 답답해"
     },
     {
       "role": "counselor",
-      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 이런 여유로운 시간은 스스로를 돌아보고, 마음의 평화를 찾는 데 큰 도움이 될 수 있어. 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊"
+      "message": "도산아, 여자친구와 대화가 잘 안 되어 답답한 기분이 드는 것 정말 이해해. 그런 상황에서는 소통의 어려움이 더 크게 느껴질 수 있어요. 혹시 그 답답함을 조금 덜어줄 수 있는 방법으로, 그녀와 대화할 때 어떤 주제나 방식으로 접근해보고 싶으신지 생각해본 적이 있나요? 함께 이야기해보면 좋을 것 같아요."
     },
     {
       "role": "client",
-      "message": ""
+      "message": "음 나는 대화가 주고 받고 좀 서로 공감하고 의견도 얘기했으면 좋겠는데 여자친구는 본인 의견만 얘기하기 바빠"
     },
     {
       "role": "counselor",
-      "message": "도산아, 오늘 늦잠 자고 비 오는 날 집에서 여유롭게 공부하고 있다는 게 정말 좋다니 기쁘네! 그런 여유로운 시간은 자신을 돌아보는 데 큰 도움이 될 수 있어. 혹시 그 시간을 어떻게 활용하고 싶은지 더 이야기해볼래? 😊"
+      "message": "도산아, 여자친구와의 대화에서 서로의 의견을 공감하고 나누는 것이 중요하다는 생각이 드는 것 정말 이해해. 이런 상황에서는 상대방의 의견만 듣고 있을 때, 소통의 벽이 느껴질 수 있어요. 혹시 그녀에게 당신의 생각이나 감정을 솔직하게 표현해보는 건 어떨까요? 그 과정에서 조금 더 열린 대화가 이루어질 수도 있을 것 같아요."
+    },
+    {
+      "role": "client",
+      "message": "얘기해봤지 근데 안 바뀌는 걸 어떡해 정말 답답해"
+    },
+    {
+      "role": "counselor",
+      "message": "도산아, 여자친구와 대화해봤지만 상황이 바뀌지 않아 정말 답답한 마음이 드는 것 이해해. 그런 상황에서는 소통의 한계를 느끼며 더욱 힘들 수 있어요. 혹시 그녀와의 대화에서 느낀 감정을 다시 표현해보는 건 어떨까요? 당신의 기분과 필요를 솔직하게 말하면, 서로의 이해가 조금 더 깊어질 수 있을 것 같아요."
+    },
+    {
+      "role": "client",
+      "message": "감정을 표현하라는거야?"
+    },
+    {
+      "role": "counselor",
+      "message": "도산아, 감정을 표현하라는 말이 참 중요한 것 같아요. 상대방과의 소통에서 당신의 진솔한 감정을 나누는 것이 서로의 이해를 깊게 할 수 있는 첫 걸음이 될 수 있어요. 조금 힘들더라도, 당신의 마음을 솔직하게 전해보는 건 어떨까요? 그 과정에서 새로운 대화의 가능성이 열릴 수 있을 거예요."
+    },
+    {
+      "role": "client",
+      "message": "알아써 한번해볼게"
+    },
+    {
+      "role": "counselor",
+      "message": "도산아, 감정을 표현해보겠다고 결심한 것은 정말 좋은 시작이에요! 그 과정에서 자신의 마음을 솔직하게 전하는 것이 서로의 이해를 깊게 할 수 있는 중요한 방법이 될 거예요. 어떤 감정을 표현하고 싶은지, 조금 더 생각해보면 좋을 것 같아요. 응원할게! 😊"
     },
     {
       "role": "client",
@@ -166,12 +230,5 @@
       "message": ""
     }
   ],
-  "evaluation": {
-    "general_1": "4, The therapist generally seemed to grasp the patient's feelings and concerns about their emotional state and experiences, responding appropriately to what the client explicitly shared. However, there were moments where the therapist's responses were somewhat generic and did not fully delve into the nuances of the client's feelings, showing a limited ability to respond to more subtle communication. Thus, while the therapist demonstrated good listening and empathic skills, there is room for improvement in fully understanding and addressing the client's deeper emotional landscape.",
-    "general_2": "4, The therapist generally seemed to grasp the patient’s internal reality as reflected by what the patient explicitly said, but there were moments where the therapist's responses lacked depth in exploring the client's feelings and experiences, particularly in addressing the client's emotions more subtly. Although the therapist showed good listening and empathic skills overall, there were opportunities for deeper engagement that were not fully realized.",
-    "general_3": "4, The therapist demonstrated a good ability to grasp the patient's internal reality, reflecting back the client's feelings and thoughts effectively. However, there were moments where the therapist's responses lacked deeper engagement with the client's more subtle emotional nuances, such as not fully exploring the client's feelings about their job search or the pressures they mentioned. This indicates a solid but not exceptional level of empathic skill and understanding.",
-    "cbt_1": "4, The therapist primarily focused on supportive interactions and encouraged the client to express feelings and thoughts. However, there was a lack of deeper exploration through guided discovery techniques that could help the client gain new insights or perspectives. The questioning was somewhat supportive but did not effectively facilitate the client's self-reflection to a significant degree, which is why a score of 4 is appropriate.",
-    "cbt_2": "4, The therapist primarily provided supportive responses and encouraged the client to share their feelings and experiences. However, there was a lack of deeper exploration into the client's cognition or behavior that needed addressing, as well as minimal use of guided discovery techniques. The therapist's approach was mostly supportive but did not effectively help the client gain new perspectives or insights. Therefore, a score of 4 is appropriate, as the therapist did not fully meet the criteria for guided discovery.",
-    "cbt_3": "4, The therapist mostly provided supportive responses and encouraged the client to share their feelings and experiences. However, there was a lack of clear guided discovery techniques to help the client examine their thoughts and feelings more critically. The conversation did not sufficiently prompt the client to explore alternative perspectives or weigh the advantages and disadvantages of their feelings or situations."
-  }
+  "evaluation": "안내된 발견 기법: 6, 상담사는 내담자의 감정을 이해하고 지지하는 발언을 하였으나, 구체적인 질문이나 탐색을 통한 자율적인 발견을 유도하는 데는 한계가 있었습니다.\n\n주요 사고/행동 인식: 5, 내담자의 감정을 포착하고 지원했으나, 변화가 필요한 핵심 사고나 행동을 구체적으로 인식하고 개입하는 데는 부족함이 있었습니다.\n\n전략의 적절성 및 일관성: 6, 상담사의 전략은 내담자의 감정 표현을 지지하는 데 적절했으나, CBT와 같은 특정 전략이 명확히 드러나지 않아 일관성에서 부족함을 보였습니다.\n\n질문 기술 및 사고 확장: 5, 구체적인 질문이나 사고 확장을 유도하는 질문이 부족하여 내담자의 사고를 넓히는 데 한계가 있었습니다.\n\n정서적 유대 및 공감: 8, 상담사는 내담자의 감정을 잘 이해하고 지지적인 반응을 보였으나, 감정의 복잡성을 더 깊게 탐색하는 데는 미흡했습니다.\n\n목표 설정 및 협력: 4, 상담사는 협력적인 태도를 보였으나 구체적인 목표 설정이 부족하여 내담자와의 협력적 접근이 약했습니다."
 }

@@ -4,11 +4,10 @@ from langchain_core.messages import AIMessage
 import os
 
 class CounselorAgent:
-    def __init__(self, client_info,  total_strategy, persona_type, emotion, distortion=None, model_name="gpt-4o-mini", temperature=0.7):
+    def __init__(self, client_info, persona_type, emotion, distortion=None, model_name="gpt-4o-mini", temperature=0.7):
         self.client_info = client_info
-        self.total_strategy = total_strategy  # 'cbt_strategy' 대신 'total_strategy'
-        self.emotion = emotion  
-        self.distortion = distortion
+        self.emotion = emotion if emotion else "없음"
+        self.distortion = distortion if distortion else "없음"
         self.llm = ChatOpenAI(model=model_name, temperature=temperature)
 
         # Load persona prompt based on persona_type
@@ -22,8 +21,6 @@ class CounselorAgent:
         with open("prompts/counselor_prompt.txt", "r", encoding="utf-8") as f:
             return f.read()
     
-    # 감정과 인지 왜곡에 맞는 전략 결합
-        return f"{emotion_strategy} {distortion_strategy}"
     
     def generate_response(self, history, latest_client_message):
         # history를 문자열로 변환
@@ -32,7 +29,6 @@ class CounselorAgent:
         filled_prompt = self.prompt_template.format(
             client_info=self.client_info,
             history=formatted_history,  # 변환된 문자열 사용
-            total_strategy=self.total_strategy,
             persona_prompt=self.persona_prompt,
             emotion=self.emotion,
             distortion=self.distortion,
@@ -40,9 +36,7 @@ class CounselorAgent:
         )
 
         # ✅ 프롬프트 출력 추가
-        print("\n🔍 [DEBUG] 최종 counselor_prompt:\n")
         print(filled_prompt)
-        print("🔚 [END OF PROMPT]\n")
 
         response = self.llm.invoke(filled_prompt)
 

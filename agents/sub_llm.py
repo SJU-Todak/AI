@@ -40,14 +40,11 @@ class SubLLMAgent:
 
         # 감정 추출 (감정: '슬픔', '기쁨' 등)
         emotion_match = re.search(r"감정:\s*(\S+)", response)
-        if emotion_match:
-            emotion = emotion_match.group(1).strip()
+        emotion = emotion_match.group(1).strip() if emotion_match else "없음"
 
         # 인지 왜곡 추출
         distortion_matches = re.findall(r"인지 왜곡:\s*([^,]+(?:,\s*[^,]+)*)", response)
-
         if distortion_matches:
-            # 왜곡 이름 리스트로 정리
             distortions = [d.strip() for d in distortion_matches[0].split(',')]
             distortion = ", ".join(distortions)
         else:

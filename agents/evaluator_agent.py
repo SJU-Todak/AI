@@ -5,41 +5,32 @@ from config import load_prompt
 import os
 
 class EvaluatorAgent:
-    def __init__(self, criteria_list, model_name="gpt-4o-mini", temperature=0.7):
-        self.criteria_list = criteria_list  # 평가 기준 리스트
+    def __init__(self, model_name="gpt-4o-mini", temperature=0.7):
         self.llm = ChatOpenAI(model=model_name, temperature=temperature)
+        self.prompt_template = self.load_prompt_template()
 
-        self.prompt_templates = self.load_prompt_templates()
+    def load_prompt_template(self):
+        prompt_path = "prompts/evaluation_final.txt"
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            return f.read()
 
-    def load_prompt_templates(self):
-        prompt_templates = {}
-        for criteria in self.criteria_list:
-            prompt_path = f"prompts/evaluation_{criteria}.txt"
-            with open(prompt_path, "r", encoding="utf-8") as f:
-                prompt_templates[criteria] = f.read()
-        return prompt_templates
-
-    def evaluate(self, history, criteria):
+    def evaluate(self, history):
         conversation = '\n'.join([
             f"{item['role'].capitalize()}: {item['message']}" for item in history
         ])
         
-        filled_prompt = self.prompt_templates[criteria].format(
-            conversation=conversation
-        )
-
+        filled_prompt = self.prompt_template.format(conversation=conversation)
         response = self.llm.invoke(filled_prompt)
 
         if isinstance(response, AIMessage):
-            return response.content  # 응답 내용 반환
+            return response.content
         return str(response)
 
     def evaluate_all(self, history):
-        results = {}
-        for criteria in self.criteria_list:
-            result = self.evaluate(history, criteria)
-            results[criteria] = result  # 평가 결과를 기준별로 저장
-        return results
+        result = self.evaluate(history)
+        return {
+            "총평": result
+        }
 
 # 사용 예시
 if __name__ == "__main__":
@@ -49,9 +40,8 @@ if __name__ == "__main__":
         # 여기에 실제 상담 대화 내용 추가
     ]
     
-    evaluator = EvaluatorAgent(criteria_list=["general_1", "general_2", "cbt_1"])
-    results = evaluator.evaluate_all(history)
+    evaluator = EvaluatorAgent()
+    result = evaluator.evaluate_all(history)
     
     # 결과 출력
-    for criteria, result in results.items():
-        print(f"{criteria}: {result}")
+    print(result)

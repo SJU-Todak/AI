@@ -33,8 +33,9 @@ class TherapySimulation:
         if user_info:
             # If the user exists, load their information
             self.name = user_info["name"]
-            self.age = user_info["age"]
-            self.gender = user_info["gender"]
+            self.age = user_info["age"] 
+            self.gender = user_info["gender"] 
+
         else:
             # If the user doesn't exist, prompt for information
             print(f"{self.user_id}는 새로운 사용자입니다. 사용자 정보를 입력해주세요.")
@@ -52,20 +53,19 @@ class TherapySimulation:
         else:
             self.history.append({
                 "role": "client",
-                "message": f"{self.name}님, 안녕하세요. 어떤 문제가 있으신가요?"
+                "message": f"{self.name}님, 안녕하세요. 오늘 하루는 어떠셨나요?"
             })
 
         # SubLLM analysis
         self.subllm_agent = SubLLMAgent()
-        self.evaluator_agent = EvaluatorAgent(criteria_list=["general_1", "general_2", "general_3", "cbt_1", "cbt_2", "cbt_3"])
+        self.evaluator_agent = EvaluatorAgent()
 
          # 상담자 에이전트와 평가자 에이전트 초기화
         self.counselor_agent = CounselorAgent(
             client_info=f"{self.name}, {self.age}세, {self.gender}",
-            total_strategy="",  # 초기에는 전략을 공란으로 두고 사용자의 메시지에 따라 업데이트
             persona_type=persona_type,
-            emotion="",
-            distortion=""
+            emotion="없음",
+            distortion="없음"
         )
 
         self._init_history()
@@ -77,40 +77,26 @@ class TherapySimulation:
         if not self.history:  # history가 비어 있으면 초기 메시지를 추가
             self.history.append({
                 "role": "client",
-                "message": f"{self.name}님, 안녕하세요. 어떤 문제가 있으신가요?"
+                "message": f"{self.name}님, 안녕하세요. 오늘 하루는 어떠셨나요?"
             })
     def run(self):
         for turn in range(self.max_turns):
-            print(f"--- Turn {turn + 1} ---")
-
-            # 직접 내담자 역할을 할 수 있는 부분 (현재는 사용자가 직접 입력)
+            print(f"\n--- Turn {turn + 1} ---")
             client_msg = input(f"{self.name}: ")
+            print("="*20)
             self.history.append({"role": "client", "message": client_msg})
-            print(f"{self.name}: {client_msg}")
+            # Sub LLM 분석 실행
+            analysis_result = self.subllm_agent.analyze(client_msg)
+            self.counselor_agent.emotion = analysis_result.get("감정", "없음")
+            self.counselor_agent.distortion = analysis_result.get("인지왜곡", "없음")
 
             # 상담자 응답 생성
+            print("****최종 프롬프트****")
             counselor_msg = self.counselor_agent.generate_response(self.history, client_msg)
+            print("="*20)
             self.history.append({"role": "counselor", "message": counselor_msg})
-            print("Counselor:", counselor_msg)
+            print(counselor_msg)
 
-            # 3. SubLLM 분석 (감정 및 인지 왜곡 탐지)
-            analysis_result = self.subllm_agent.analyze(client_msg)
-            emotion = analysis_result.get("감정", "")
-            distortion = analysis_result.get("인지왜곡", "")
-            # total_strategy = analysis_result.get("총합_CBT전략", "")  # 여기서 total_strategy 사용
-            
-            print(f"Emotion detected: {emotion}")
-            print(f"Cognitive Distortion detected: {distortion}")
-            print()
-
-            # 4. 최신 분석 결과로 상담자 에이전트 재정의
-            self.counselor_agent = CounselorAgent(
-                client_info=f"{self.name}, {self.age}세, {self.gender}성",
-                total_strategy="",  # total_strategy 명시적으로 전달
-                persona_type=self.persona_type,
-                emotion=emotion,
-                distortion=distortion
-            )
             # 5. 채팅 로그 저장
             save_chat_log(self.user_id, self.chat_id, client_msg, counselor_msg)  # 채팅 로그를 MongoDB에 저장
             # 6. 종료 조건 체크
@@ -119,15 +105,24 @@ class TherapySimulation:
                 break
 
         # 7. 평가 수행
-        evaluation_result = self.evaluator_agent.evaluate_all(self.history)
+        current_conversation = [
+            {"role": "client", "message": client_msg},
+            {"role": "counselor", "message": counselor_msg}
+        ]
+        evaluation_result = self.evaluator_agent.evaluate_all(current_conversation)
 
         # 7. 결과 반환
+        print("\n평가")
+        print("="*20)
+        for 항목, 설명 in evaluation_result.items():
+            print(f"{항목}: {설명}")
+
         return {
             "persona": self.persona_type,
-            "cognitive_distortion": self.counselor_agent.distortion,
-            "emotion": self.counselor_agent.emotion,
             "history": self.history,
-            "evaluation": evaluation_result
+            "evaluation": evaluation_result,
+            "emotion": analysis_result.get("감정", "없음"),
+            "distortion": analysis_result.get("인지왜곡", "없음")
         }
 
 if __name__ == "__main__":
