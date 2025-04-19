@@ -22,21 +22,26 @@ class CounselorAgent:
             return f.read()
     
     
-    def generate_response(self, history, latest_client_message):
+    def generate_response(self, history, latest_client_message, current_session=None):
         # history를 문자열로 변환
         formatted_history = "\n".join([f"{msg['role'].capitalize()}: {msg['message']}" for msg in history])
+        
+        session_dialogue = "\n".join(
+            [f"{'내담자' if msg['role'] == 'client' else '상담자'}: {msg['message']}" for msg in current_session]
+        ) if current_session else ""
 
         filled_prompt = self.prompt_template.format(
             client_info=self.client_info,
-            history=formatted_history,  # 변환된 문자열 사용
+            history=formatted_history,
             persona_prompt=self.persona_prompt,
             emotion=self.emotion,
             distortion=self.distortion,
-            latest_client_message=latest_client_message
+            latest_client_message=latest_client_message,
+            session_dialogue=session_dialogue
         )
 
         # ✅ 프롬프트 출력 추가
-        print(filled_prompt)
+        #print(filled_prompt)
 
         response = self.llm.invoke(filled_prompt)
 

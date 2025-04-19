@@ -50,6 +50,8 @@ class SubLLMAgent:
         else:
             distortion = "없음"
 
+        print("감정: ", emotion, "/  인지왜곡: ", distortion)
+
         # 최종 반환할 JSON 형식으로 결과를 생성
         return {
             "감정": emotion,
