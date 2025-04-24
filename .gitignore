@@ -6,3 +6,7 @@ conf.d/
 test_code/
 vector_store.py
 logs/
+results/
+*.pem
+outputs/
+.env
