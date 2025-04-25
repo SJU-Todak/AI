@@ -12,7 +12,7 @@ from agents.sub_llm import SubLLMAgent
 from config import get_config, set_openai_api_key
 from cbt.cbt_mappings import emotion_strategies, cognitive_distortion_strategies
 from DB import get_chat_log, save_chat_log, save_user_info, get_user_info  # DB.py에서 import
-
+from agents.mission_agent import MissionAgent
 # API 키 설정
 set_openai_api_key()
 from pymongo import MongoClient
@@ -156,4 +156,12 @@ if __name__ == "__main__":
     Path(args.output_file).parent.mkdir(parents=True, exist_ok=True)
     with open(args.output_file, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
+
+    # 분석 여부 묻기
+    analyze = input("채팅이 종료되었습니다. 결과를 분석하시겠습니까? (y/n): ")
+    if analyze.lower() == "y":
+        mission_agent = MissionAgent()
+        mission = mission_agent.provide_mission(result["history"], result["evaluation"])
+        print("\n미션 제공:")
+        print(mission)
 

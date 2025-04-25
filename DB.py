@@ -92,3 +92,24 @@ def get_user_info(user_id):
         return user_info  # 사용자 정보 반환
     else:
         return None
+    
+def delete_user_info(user_id):
+    """
+    특정 user_id에 대한 사용자 정보와 채팅 로그를 삭제
+    """
+    # 사용자 정보 삭제
+    user_result = user_collection.delete_one({"user_id": user_id})
+    if user_result.deleted_count > 0:
+        print(f"User info for user_id {user_id} has been deleted successfully!")
+    else:
+        print(f"No user info found for user_id {user_id}.")
+
+def delete_chat_log(chat_id):
+    """
+    특정 chat_id에 대한 채팅 로그를 삭제
+    """
+    result = chat_collection.delete_one({"chat_id": chat_id})
+    if result.deleted_count > 0:
+        print(f"Chat log for chat_id {chat_id} has been deleted successfully!")
+    else:
+        print(f"No chat log found for chat_id {chat_id}.")

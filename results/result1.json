@@ -6,95 +6,187 @@
   "history": [
     {
       "role": "user",
-      "message": "나에대해 알고있니",
-      "timestamp": "2025-04-03T17:39:02.754073"
+      "message": "친구랑 다퉜어",
+      "timestamp": "2025-04-23T17:49:48.784329"
     },
     {
       "role": "bot",
-      "message": "안녕하세요, 정원님! 오늘 이렇게 이야기하게 돼서 정말 기뻐요. 😊 어떤 고민이 있으신지, 혹은 요즘 기분이 어떤지 말씀해 주실 수 있어요? 당신의 이야기를 듣고 싶어요. \n\n이 공간은 안전하니까, 마음 편히 털어놓아도 괜찮아요!",
-      "timestamp": "2025-04-03T17:39:02.754073"
+      "message": "안녕하세요, 고니님! 😊 정말 반가워요. 요즘 어떤 기분이신가요? 혹시 마음속에 무거운 고민이 있나요? 제가 여기서 도와줄 수 있어요. \n\n어떤 생각들이 떠오르고 있는지 이야기해주시면, 우리가 함께 그 생각들을 살펴보고 어떻게 느끼는지 알아보는 시간을 가질 수 있을 것 같아요. 당신의 감정이 정말 중요하니까요! 💖",
+      "timestamp": "2025-04-23T17:49:48.784329"
     },
     {
       "role": "user",
-      "message": "나의 정보에대해 알고있는게있으면 말해봐",
-      "timestamp": "2025-04-03T17:39:21.167418"
+      "message": "친구랑 다시 좋은관계를 가지려면 어떻게해야해",
+      "timestamp": "2025-04-23T17:50:28.424494"
     },
     {
       "role": "bot",
-      "message": "정원님, 물론이죠! 😊 제가 당신에 대해 조금 더 알게 되면 좋겠어요. 당신의 감정이나 생각에 대해 이야기하는 것이 중요하니까요. 현재 어떤 기분인지, 또는 어떤 생각이 드는지 나눠주실 수 있어요? 지금은 특별히 어떤 고민이 있는지 궁금해요. 이 공간은 당신의 이야기를 들어주기 위해 마련된 곳이니까 편하게 이야기해 주세요!",
-      "timestamp": "2025-04-03T17:39:21.167418"
+      "message": "고니님, 친구랑 다퉜다니 정말 마음이 아프겠어요. 😔 그런 상황에서는 슬픈 감정이 드는 게 당연해요. 친구와의 관계는 소중하니까요. \n\n이런 기분을 조금 덜어내기 위해서, 혹시 요즘 하고 싶은 활동이나 관심 있는 일이 있는지 생각해보셨나요? 예를 들어, 좋아하는 취미나 새로운 걸 시도해보는 것도 좋을 것 같아요! 그게 기분을 조금이나마 개선하는 데 도움이 될 수 있어요. 💪💖\n\n어떤 활동이 고니님에게 즐거움을 줄 수 있을지 함께 이야기해볼까요?",
+      "timestamp": "2025-04-23T17:50:28.424494"
     },
     {
       "role": "user",
-      "message": "는 면접에서 떨어졌어 이점 기억해줘",
-      "timestamp": "2025-04-03T17:39:37.145266"
+      "message": "뭔가 불편해져서 내가 다가가기 힘들어",
+      "timestamp": "2025-04-23T17:50:53.376394"
     },
     {
       "role": "bot",
-      "message": "정원님, 당신이 나에 대해 알고 싶어하는 마음을 이해해요! 😊 우리는 서로를 조금 더 알아가는 과정에 있어요. 지금은 당신이 어떤 생각이나 감정을 가지고 있는지 이야기해 주는 게 좋을 것 같아요. \n\n혹시 최근에 겪은 일이나, 생각하고 있는 것들이 있다면 나눠줄 수 있어요? 어떤 것이라도 괜찮으니까, 편하게 이야기해 주세요. 이 공간은 당신의 이야기를 듣고 지지하기 위해 마련된 곳이니까요! 💖",
-      "timestamp": "2025-04-03T17:39:37.145266"
+      "message": "고니님, 친구와의 관계를 회복하고 싶다는 마음, 정말 잘 이해해요. 그런 생각을 하는 건 친구를 소중히 여기는 마음이니까요. 🤗 다툼은 누구에게나 일어날 수 있는 일이지만, 그 후에 어떻게 행동할지가 정말 중요해요.\n\n우선, 친구에게 먼저 다가가고 싶은 마음이 드신다면, 어떤 점이 가장 고민되세요? 그 친구와 이야기할 때 어떤 감정이 드는지, 혹시 구체적으로 떠오르는 생각이 있을까요? 그걸 함께 나누면, 다음에 어떤 행동을 취할 수 있을지 더 쉽게 정리할 수 있을 거예요. 💖\n\n고니님이 느끼는 감정과 생각을 함께 들어보고 싶어요!",
+      "timestamp": "2025-04-23T17:50:53.376394"
     },
     {
       "role": "user",
-      "message": "exitexit",
-      "timestamp": "2025-04-03T17:39:47.387218"
+      "message": "하 근데 나때문에 친구가 날 하는것같아",
+      "timestamp": "2025-04-23T17:51:19.315040"
     },
     {
       "role": "bot",
-      "message": "정원님, 면접에서 떨어진 경험이 정말 힘들었겠어요. 😔 그런 상황은 누구에게나 슬픔과 실망감을 줄 수 있어요. 당신의 감정이 정말 이해가 가요. 이럴 때는 자신을 너무 비난하지 않는 것이 중요하답니다. \n\n혹시 그 면접에서 어떤 점이 힘들었는지, 아니면 어떤 생각이 드셨는지 나눌 수 있을까요? 그 경험을 통해 느낀 감정이나 생각들을 함께 이야기해보면 좋을 것 같아요. 그리고 혹시 그 외에도 다른 긍정적인 경험들이 있었다면, 그것도 함께 나눠볼 수 있을까요? 😊",
-      "timestamp": "2025-04-03T17:39:47.387218"
+      "message": "고니님, 그런 불편한 감정이 드는 건 정말 자연스러운 일이에요. 😟 친구와의 관계 회복을 원하지만 그 과정에서 느끼는 두려움이나 불안은 누구에게나 있을 수 있거든요. 그 감정이 고니님을 힘들게 하고 있다는 걸 잘 이해해요.\n\n그런 기분을 조금 덜어내기 위해, 우리가 한 걸음씩 나아가는 게 좋을 것 같아요. 먼저, 친구에게 다가가는 게 두렵다면, 작은 행동부터 시작해보는 건 어떨까요? 예를 들어, 친구에게 간단한 메시지를 보내보는 것처럼요. \n\n메시지의 내용은 가벼운 인사나 “잘 지내?” 같은 거면 좋을 것 같아요. 그런 작은 시도가 고니님이 느끼는 불안감을 줄여줄 수 있을 거예요. 😊\n\n어떻게 생각하세요? 혹시 그런 작은 메시지를 보내는 게 어떤 느낌일지, 또는 다른 아이디어가 있는지 이야기해볼까요? 💖",
+      "timestamp": "2025-04-23T17:51:19.315040"
     },
     {
       "role": "user",
-      "message": "/END",
-      "timestamp": "2025-04-03T17:39:55.764079"
+      "message": "그래 한번 노력해볼게",
+      "timestamp": "2025-04-23T17:51:41.435156"
     },
     {
       "role": "bot",
-      "message": "정원님, 면접에서 떨어진 경험이 정말 안타깝고 힘들었을 것 같아요. 😔 그런 상황은 누구에게나 스트레스를 주고, 자신에 대한 의문을 가질 수도 있죠. 기분이 어떠셨는지, 어떤 생각이 드셨는지 조금 더 이야기해 볼까요? \n\n이때는 자신에게 너무 harsh하게 대하지 않는 것이 중요해요. 실패는 배우는 과정의 일부분이니까요. 혹시 그 면접에서 느낀 감정이나 생각들 중에서 기억에 남는 것들이 있나요? 그런 것들을 나누면 더 나은 방향으로 나아갈 수 있을 거예요. 😊",
-      "timestamp": "2025-04-03T17:39:55.764079"
-    },
-    {
-      "role": "user",
-      "message": "[/END]",
-      "timestamp": "2025-04-03T17:40:15.836461"
-    },
-    {
-      "role": "bot",
-      "message": "정원님, 면접에서 떨어진 일이 정말 힘들었겠어요. 😔 그런 경험은 누구에게나 슬픔과 실망감을 주니까요. 지금 기분이 어떠신지 궁금해요. 이럴 때는 자신에게 너무 가혹하지 않도록 하는 게 중요해요. \n\n혹시 면접을 준비하면서 느꼈던 압박감이나, 떨어진 후에 떠오른 생각들이 있었나요? 이런 감정을 나누는 것이 도움이 될 수 있을 거예요. 이 공간은 당신의 이야기를 듣고 지지하는 곳이니까, 편하게 이야기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:40:15.836461"
-    },
-    {
-      "role": "user",
-      "message": "나에대해 알고있는게있으면 말해봐",
-      "timestamp": "2025-04-03T17:40:53.718659"
-    },
-    {
-      "role": "bot",
-      "message": "정원님, 정말 힘든 순간을 겪고 계시겠어요. 😔 면접에서 떨어진 후에 어떤 감정을 느끼셨는지, 혹은 어떤 생각들이 떠오르셨는지 이야기해 주실 수 있을까요? 그런 감정들을 나누는 게 도움이 될 수 있어요. \n\n또한, 혹시 면접 준비를 하면서 스스로에게 어떤 기대를 했는지, 또는 어떤 압박감이 있었는지도 궁금해요. 이 모든 게 당신의 경험이니까, 편하게 이야기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:40:53.718659"
+      "message": "고니님, 그런 생각이 드는 건 정말 힘든 일이죠. 😞 친구가 고니님 때문에 힘들어할 거라는 생각은 마음을 더 무겁게 만들 수 있어요. 하지만 고니님이 모든 책임을 혼자 지고 있다는 느낌은 너무 개인화된 생각일 수 있어요. 친구와의 관계는 서로의 감정이 얽혀 있는 복잡한 것이라서, 고니님 혼자만의 문제가 아닐 수 있어요.\n\n이런 상황에서, 친구가 느끼는 감정이나 상황도 함께 고려해보는 게 좋을 것 같아요. 혹시 친구도 무슨 이유로 힘들어하고 있는지, 또는 상황이 어떻게 흘러갔는지 떠올려보면 좋을 것 같아요. 💖 그러면 고니님이 느끼는 부담을 조금 덜어낼 수 있을 거예요.\n\n친구의 입장에서 생각해보면 어떤 점이 있을까요? 그리고 고니님이 느끼는 감정도 함께 나누면서 조금 더 마음을 가볍게 해보는 건 어떨까요? 😊",
+      "timestamp": "2025-04-23T17:51:41.435156"
     },
     {
       "role": "user",
       "message": "[/END]",
-      "timestamp": "2025-04-03T17:41:06.526324"
+      "timestamp": "2025-04-23T17:51:58.841362"
     },
     {
       "role": "bot",
-      "message": "정원님, 다시 이야기해 주셔서 고마워요! 😊 면접에서 떨어진 일로 마음이 힘든 것 같아요. 이런 경험은 정말 누구에게나 어려운 일이고, 감정이 복잡하게 얽힐 수 있죠. 지금 어떤 생각이나 감정이 드는지 나눠주실 수 있어요? \n\n혹시 떨어진 후에 자신에 대해 어떤 생각이 들었는지도 궁금해요. 예를 들어, '나는 충분히 잘하지 못했다'는 생각이 드셨나요? 혹은 다른 감정들이 있었나요? 이걸 이야기하는 게 정말 도움이 될 수 있어요. 편하게 얘기해 주세요! 💖",
-      "timestamp": "2025-04-03T17:41:06.526324"
+      "message": "고니님, 그렇게 생각해주셔서 정말 기뻐요! 😊 친구와의 관계를 회복하려는 그 마음, 정말 멋진 결정이에요. 작은 노력부터 시작해보는 게 아주 좋은 방법이에요!\n\n이제 그 메시지를 보내기로 결심하셨으니, 어떤 내용을 담고 싶으신지 한번 생각해볼까요? “잘 지내?” 같은 간단한 인사를 넘어서, 친구와 나누고 싶은 이야기가 있다면 좀 더 구체적으로 적어보는 것도 좋을 것 같아요. 고니님이 친구에게 어떤 마음을 전하고 싶은지, 혹시 떠오르는 생각이 있으신가요? \n\n이렇게 조금 더 구체적으로 생각해보면, 메시지를 보내는 게 더 수월해질 수 있을 거예요. 😊💖 그리고 그 과정을 통해 고니님 스스로도 조금 더 편안해질 수 있을 거라고 믿어요!",
+      "timestamp": "2025-04-23T17:51:58.841362"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T02:23:08.428545"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 정말 좋은 생각이에요! 😊 친구에게 메시지를 보내기로 결심한 건 큰 첫걸음이에요. 친구와의 관계를 회복하고 싶다는 마음이 정말 소중하니까요! \n\n이제 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사에 더해서 고니님이 친구에게 어떤 감정을 전하고 싶은지, 혹은 어떤 이야기를 나누고 싶은지가 궁금해요. \n\n예를 들어, 그 친구와 함께했던 좋은 기억이나, 최근에 어떻게 지냈는지 물어보는 것도 좋을 것 같아요. 그런 작은 이야기들이 관계를 다시 이어주는 데 큰 도움이 될 수 있으니까요. 😊\n\n혹시 고니님 마음속에 있는 메시지의 아이디어가 있으면 이야기해줄 수 있나요? 함께 나누면서 더 좋은 방향으로 발전시켜보면 좋을 것 같아요! 💖",
+      "timestamp": "2025-04-25T02:23:08.428545"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:16:53.016504"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 그 결심 정말 대단해요! 😊 친구에게 메시지를 보내기로 한 건 큰 용기 있는 결정이니까요. 친구와의 관계를 회복하고 싶다는 마음이 정말 멋져요!\n\n이제 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사에 추가해서, 고니님이 친구에게 전하고 싶은 감정이 있을지 궁금해요. 예를 들어, 최근에 있었던 일이나, 친구와 함께했던 즐거운 기억들을 떠올려보는 것도 좋을 것 같아요. 그런 작은 이야기가 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖\n\n혹시 고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 같이 나눠볼까요? 함께 고민해보면 더 좋은 방향으로 발전할 수 있을 거예요! 😊",
+      "timestamp": "2025-04-25T09:16:53.016504"
+    },
+    {
+      "role": "user",
+      "message": "/END]",
+      "timestamp": "2025-04-25T09:45:05.745194"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 그 결심 정말 대단해요! 😊 친구에게 메시지를 보내기로 한 건 큰 용기 있는 결정이니까요. 친구와의 관계를 회복하고 싶다는 마음이 정말 멋져요!\n\n이제 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사에 추가해서, 고니님이 친구에게 전하고 싶은 감정이나 이야기들이 있을지 궁금해요. 예를 들어, 최근에 있었던 일이나, 친구와 함께했던 즐거운 기억들을 떠올려보는 것도 좋을 것 같아요. 그런 작은 이야기가 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖\n\n혹시 고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 같이 나눠볼까요? 함께 고민해보면 더 좋은 방향으로 발전할 수 있을 거예요! 😊",
+      "timestamp": "2025-04-25T09:45:05.745194"
+    },
+    {
+      "role": "user",
+      "message": "[[/END]",
+      "timestamp": "2025-04-25T09:45:14.740712"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 정말 멋진 결심을 하셨네요! 😊 친구에게 메시지를 보내기로 한 건 큰 용기 있는 결정이에요. 그 마음이 정말 소중하고, 친구와의 관계를 회복하고 싶다는 그 마음이 너무 아름다워요.\n\n이제 어떤 내용을 담고 싶으신지 조금 더 생각해볼까요? “잘 지내?”라는 인사에 더해서, 혹시 친구에게 전하고 싶은 감정이나 최근에 있었던 일들이 있을까요? 같이 그 아이디어를 나누면, 더 나은 메시지를 만들 수 있을 것 같아요. 💖\n\n예를 들어, 친구와 함께했던 좋은 기억이나, 그동안 어떻게 지냈는지 궁금하다는 이야기 같은 것들이요. 그렇게 하면 서로의 마음이 한 걸음 더 가까워질 수 있을 거예요! 😊 어떤 생각이 떠오르세요?",
+      "timestamp": "2025-04-25T09:45:14.740712"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:45:46.490740"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 메시지를 보내기로 한 결심이 정말 멋져요! 😊 그 용기가 얼마나 대단한지 알아요. 친구와의 관계를 회복하고 싶다는 마음이 정말 소중하니까요. \n\n이제 친구에게 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사에 더해서, 고니님이 친구에게 전하고 싶은 감정이나 최근에 있었던 이야기들이 있을까요? \n\n예를 들어, 그 친구와 함께했던 즐거운 기억이나, 그동안 어떻게 지냈는지 궁금하다는 이야기를 추가해보면 좋을 것 같아요. 그런 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있으니까요. 💖 \n\n혹시 어떤 내용이 떠오르는지 함께 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T09:45:46.490740"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:47:38.216995"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 메시지를 보내기로 한 결심, 정말 멋지고 대단한 걸요! 😊 그 용기가 얼마나 소중한지 아는 만큼, 친구와의 관계를 회복하고 싶다는 마음이 정말 귀하네요. \n\n이제 친구에게 어떤 내용을 담고 싶으신지 함께 생각해보면 좋을 것 같아요. “잘 지내?”라는 인사에 추가해서, 고니님이 친구에게 어떤 감정을 전하고 싶은지, 또는 최근에 있었던 이야기들이 있을까요? \n\n예를 들어, 그동안 어떻게 지냈는지 궁금하다는 말이나, 함께했던 좋은 기억을 떠올려보는 것도 좋을 것 같아요. 그런 이야기가 서로의 마음을 더 가깝게 만들어줄 수 있거든요! 💖\n\n어떤 내용이 떠오르는지 같이 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T09:47:38.216995"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:48:48.763995"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 그 결심 정말 멋져요! 😊 친구에게 메시지를 보내기로 한 건 큰 용기 있는 결정이에요. 그 마음이 얼마나 소중한지 잘 알고 있어요. \n\n이제 친구에게 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해보는 건 어때요? “잘 지내?”라는 간단한 인사에 더해서, 고니님이 친구에게 전하고 싶은 감정이나 최근에 있었던 일들도 함께 담아보면 좋을 것 같아요. \n\n예를 들어, 그 친구와 함께했던 즐거운 기억이나, 그동안 어떻게 지냈는지 궁금하다는 이야기 같은 것들이요. 이런 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있으니까요. 💖\n\n혹시 고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 함께 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T09:48:48.763995"
+    },
+    {
+      "role": "user",
+      "message": "/END]",
+      "timestamp": "2025-04-25T09:57:36.855031"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 정말 잘하고 계세요! 😊 친구에게 메시지를 보내기로 결심하신 그 용기, 정말 대단해요! 그 마음을 소중히 여기는 만큼, 이제 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해보면 좋을 것 같아요. \n\n“잘 지내?”라는 인사에 더해서, 고니님이 친구에게 전하고 싶은 감정이나 최근에 있었던 이야기를 추가해보면 어떨까요? 예를 들어, 친구와 함께했던 좋은 기억이나, 요즘 어떻게 지내는지 궁금하다는 이야기가 좋을 것 같아요. 그런 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있으니까요! 💖\n\n어떤 내용이 떠오르는지 함께 나누어볼까요? 고니님 마음속에 있는 메시지의 아이디어가 있다면, 저와 함께 이야기해보면 좋을 것 같아요! 😊",
+      "timestamp": "2025-04-25T09:57:36.855031"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:57:45.664973"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 이렇게 이야기해주셔서 정말 고마워요! 😊 친구에게 메시지를 보내기로 한 그 결심, 정말 멋진 걸요! 그 마음이 얼마나 소중한지 잘 알고 있어요.\n\n지금 친구와의 관계를 회복하고 싶다는 마음이 크신 만큼, 어떤 내용을 담고 싶으신지 조금 더 생각해보면 좋을 것 같아요. “잘 지내?”라는 간단한 인사 외에, 혹시 친구에게 전하고 싶은 감정이나 최근에 있었던 이야기가 있을까요? \n\n예를 들어, 친구와 함께했던 즐거운 기억이나, 요즘 어떻게 지내는지 궁금하다는 이야기를 담아보면 좋을 것 같아요! 이렇게 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖\n\n고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 함께 나누어볼까요? 😊",
+      "timestamp": "2025-04-25T09:57:45.664973"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:58:48.534637"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 정말 잘하고 계세요! 😊 친구에게 메시지를 보내기로 한 그 결심, 정말 대단해요. 그 마음을 소중히 여기는 만큼, 친구와의 관계를 회복하고 싶다는 그 의지가 정말 멋져요.\n\n이제 어떤 내용을 담고 싶으신지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 간단한 인사 외에, 혹시 친구에게 전하고 싶은 감정이나 최근에 있었던 이야기가 있을까요? \n\n예를 들어, 친구와 함께했던 즐거운 기억이나, 요즘 어떻게 지내는지 궁금하다는 이야기를 담아보면 좋을 것 같아요! 이런 작은 이야기가 서로의 마음을 더 가깝게 만들어줄 수 있으니까요. 💖\n\n고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 함께 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T09:58:48.534637"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T09:59:38.813442"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 이렇게 말씀해주셔서 정말 감사합니다! 😊 친구와의 관계를 회복하고 싶다는 그 마음, 정말 소중하고 멋진 결심이에요. 그 마음을 가지고 한 발짝 나아가려는 모습이 대단해요!\n\n이제 친구에게 어떤 내용을 담아 메시지를 보내고 싶으신지 함께 생각해보면 좋을 것 같아요. “잘 지내?”라는 인사 외에, 혹시 전하고 싶은 감정이나 최근에 있었던 이야기가 있을까요? \n\n예를 들어, 친구와 함께했던 좋은 기억을 떠올려보는 것도 좋을 것 같아요. 이런 이야기가 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖 \n\n고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 같이 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T09:59:38.813442"
+    },
+    {
+      "role": "user",
+      "message": "[/END]",
+      "timestamp": "2025-04-25T10:01:59.458834"
+    },
+    {
+      "role": "bot",
+      "message": "고니님, 이렇게 계속 이야기해주셔서 정말 고마워요! 😊 친구와의 관계를 회복하고 싶다는 그 마음이 얼마나 소중한지 잘 알고 있어요. 그 결심을 하신 것만으로도 큰 용기를 내신 거예요!\n\n이제 친구에게 어떤 메시지를 보내고 싶은지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사 외에, 혹시 전하고 싶은 감정이나 최근에 있었던 일들이 있을까요? \n\n예를 들어, 친구와 함께했던 즐거운 기억이나, 요즘 어떻게 지내는지 궁금하다는 이야기를 담아보면 좋을 것 같아요. 그런 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖\n\n고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 같이 나눠볼까요? 😊",
+      "timestamp": "2025-04-25T10:01:59.458834"
     },
     {
       "role": "counselor",
-      "message": "정원님, 다시 이야기해 주셔서 정말 고마워요! 😊 면접에서 떨어진 경험이 정말 힘들었겠어요. 그런 상황에서 느끼는 감정은 정말 복잡할 수 있죠. 지금 어떤 기분이 드는지, 어떤 생각들이 떠오르는지 조금 더 나눠볼까요?\n\n혹시 “나는 충분히 잘하지 못했다”는 생각이 드셨나요? 이런 생각은 많은 사람들이 겪는 일이에요. 우리는 자신에게 너무 가혹해질 때가 많거든요. 그런 감정이나 생각이 드는 이유를 함께 살펴보면 좋을 것 같아요. 편하게 이야기해 주세요! 💖"
-    },
-    {
-      "role": "client",
-      "message": "아니야 다른 면접들도 많은데 다시 힘내볼게"
-    },
-    {
-      "role": "counselor",
-      "message": "정원님, 그렇게 긍정적으로 생각해 주셔서 정말 기뻐요! 😊 여러 면접을 준비하고 다시 도전하겠다는 마음이 참 멋지네요. 실패는 하나의 경험일 뿐이니까, 다시 힘내는 모습이 정말 인상적이에요!\n\n그런데 혹시 면접을 준비하면서 어떤 점들이 즐거웠거나 보람찼는지 생각해 보신 적 있으신가요? 긍정적인 경험이나 작은 성취도 함께 음미해 보는 건 정말 좋거든요. 이런 것들이 정원님에게 힘이 될 수 있을 거예요! 💖 어떤 것들이 떠오르나요?"
+      "message": "고니님, 이렇게 계속 이야기해주셔서 정말 고마워요! 😊 친구와의 관계를 회복하고 싶다는 그 마음이 얼마나 소중한지 잘 알고 있어요. 그 결심을 하신 것만으로도 큰 용기를 내신 거예요!\n\n그럼 이제 친구에게 어떤 메시지를 보내고 싶은지 조금 더 구체적으로 생각해볼까요? “잘 지내?”라는 인사 외에, 혹시 전하고 싶은 감정이나 최근에 있었던 일들이 있을까요? \n\n예를 들어, 친구와 함께했던 즐거운 기억을 떠올려보는 것도 좋을 것 같아요. “그때 같이 갔던 영화 정말 재밌었지?” 같은 이야기로 시작해보는 건 어때요? 그런 작은 이야기들이 서로의 마음을 더 가깝게 만들어줄 수 있거든요. 💖\n\n고니님 마음속에 어떤 메시지의 아이디어가 떠오르는지, 함께 나눠볼까요? 😊"
     },
     {
       "role": "client",
@@ -102,11 +194,11 @@
     }
   ],
   "evaluation": {
-    "general_1": "4, The therapist generally grasped the client's feelings and concerns about the interview situation and encouraged the client to express their thoughts and emotions. However, there were moments where the therapist could have connected more deeply with the client's subtle communications about resilience and hope, indicating a good but not fully comprehensive understanding of the client's internal reality.",
-    "general_2": "4, The therapist demonstrated a good ability to grasp the client’s feelings and experiences, particularly regarding the disappointment from the interview. However, there were instances where the therapist's responses did not fully acknowledge the client's explicit statements or nuances, such as the client expressing a willingness to move forward. While the therapist provided empathetic and supportive responses, they could improve in reflecting the client's thoughts more directly. Overall, the therapist maintained a generally effective therapeutic relationship but showed room for improvement in fully understanding and responding to the client's subtle communications.",
-    "general_3": "4, The therapist demonstrated a good ability to grasp the client's feelings and reflections, particularly regarding the emotional impact of the job interview experience. They encouraged the client to explore their feelings and thoughts while providing a supportive environment. However, the therapist did not effectively establish clear goals or help the client prioritize their concerns, which prevented a higher score. Overall, they showed good listening and empathic skills but lacked in facilitating a more structured process for goal setting and decision-making.",
-    "cbt_1": "5, The therapist effectively utilized guided discovery techniques throughout the session, encouraging the client to reflect on their feelings and experiences related to the interview setback. The use of open-ended questions and supportive prompts facilitated the client’s self-exploration. However, there were instances where the therapist could have further deepened the exploration of the client’s thoughts and feelings, resulting in a slight gap from achieving an excellent balance in all interventions.",
-    "cbt_2": "4, The therapist generally facilitated the client's exploration of thoughts and feelings related to the interview experience. However, while the therapist asked several guiding questions and encouraged reflection, there were moments where the client’s responses were not fully engaged with, and the therapist predominantly redirected back to general exploration without deeply addressing specific cognitive patterns or behaviors. Thus, while the therapist used guided discovery to some extent, the effectiveness and depth of exploration were insufficient to warrant a higher score.",
-    "cbt_3": "4, The therapist primarily utilized supportive questioning and encouraged the client to explore their feelings and thoughts regarding their experience with the interview. However, while there was an emphasis on guided discovery, the therapist's approach could have been more focused on examining evidence or considering alternatives in a more structured way. The overall effectiveness was adequate, but there were moments where the exploration of new perspectives could have been deeper."
+    "general_1": "4, The therapist generally seemed to grasp the patient's \"internal reality\" as reflected by both what the patient explicitly said and what the patient communicated in more subtle ways. They demonstrated a good ability to listen and empathize, addressing the client's feelings of discomfort and fear regarding the friendship. However, there were moments where the therapist's responses could have been more tailored to the client's specific emotional state, indicating a slight limitation in deeper empathic connection or nuanced understanding. Overall, the therapist showed strong skills but did not fully reach the level of excellent understanding and responsiveness.",
+    "general_2": "4, The therapist generally grasped the patient's internal reality, reflecting both explicit statements and subtle emotions. However, there were moments where the responses could have been more nuanced to better address the client's underlying feelings, indicating a solid but not exceptional level of empathic engagement.",
+    "general_3": "4, The therapist generally grasped the patient’s internal reality and communicated understanding effectively, reflecting on the patient's feelings about their relationship and providing appropriate suggestions. However, there were moments where the therapist could have delved deeper into the patient's subtle feelings or concerns, indicating room for improvement in empathic engagement.",
+    "cbt_1": "4, The therapist primarily facilitated the client's self-reflection and exploration of feelings through guided discovery techniques. They asked appropriate questions that encouraged the client to consider their emotions and potential actions. However, while the therapist did provide some supportive suggestions, there were moments where the questioning could have been more probing to deepen the client's insights. Overall, the therapist's approach was effective but not exceptional, justifying a score of 4.",
+    "cbt_2": "4, The therapist primarily used supportive language and encouraged the client to explore their feelings and thoughts about the situation with their friend. However, the approach leaned more towards guidance rather than fully facilitating a deep exploration of cognitive restructuring or behavior change, which would require more specific questioning and analysis of the client's beliefs and actions. The therapist did not effectively challenge or expand on the client's thoughts to foster a deeper understanding, which is essential for higher scoring.",
+    "cbt_3": "5, The therapist effectively utilized guided discovery to help the client explore their feelings about the conflict with their friend. They asked open-ended questions and encouraged the client to consider different perspectives and options for communication. However, while the therapist maintained a supportive tone, there were moments where the guidance could have been more structured or focused, indicating room for improvement. Thus, the therapist demonstrates strong skills but does not fully reach the highest level of effectiveness."
   }
 }
