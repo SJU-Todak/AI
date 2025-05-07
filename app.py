@@ -7,8 +7,8 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 http://0.0.0.0:8000/docs
 http://43.200.169.229:8000
 {
-  "userId": 1,
-  "chatId": 1,
+  "userId": 2,
+  "chatId": 2,
   "persona": "26살_한여름",
   "message": "오늘도 기분이 너무 좋아",
   "name": "박정원",
@@ -38,11 +38,14 @@ from agents.counselor_agent import CounselorAgent
 from datetime import datetime
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from report import generate_and_save_report  
+
 
 app = FastAPI()
 
 # static 폴더 서빙 추가
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 class ChatRequest(BaseModel):
     userId: int
@@ -101,7 +104,6 @@ async def get_chat_log_endpoint(chatId: int):
 class GreetRequest(BaseModel):
     userId: int
     chatId: int
-    persona: str
     name: str
     age: int
     gender: str
@@ -115,7 +117,17 @@ class GreetRequest(BaseModel):
 @app.post("/generate_greet")
 async def generate_greet_endpoint(request: GreetRequest):
 
-    persona_path = f"prompts/{request.persona}.txt"
+    chat_log = get_chat_log(request.chatId)
+    recent_persona = None
+    for message in reversed(chat_log):
+        if message.get("role") == "counselor" and "persona" in message:
+            recent_persona = message["persona"]
+            break
+
+    if not recent_persona:
+        raise ValueError("최근 페르소나 정보를 찾을 수 없습니다.")
+
+    persona_path = f"prompts/{recent_persona}.txt"
     persona = load_prompt(persona_path)
     prompt_path = "starter/first.txt"
     prompt_template = load_prompt(prompt_path)
@@ -130,7 +142,7 @@ async def generate_greet_endpoint(request: GreetRequest):
         calendar=request.calendar
     )
 
-    reply = generate_greet(filled_prompt)
+    reply = generate_greet(filled_prompt, request.userId, request.chatId)
     return {
         "userId": request.userId,
         "chatId": request.chatId,
@@ -143,7 +155,7 @@ def get_docs():
     return {"message": "Swagger UI will be here!"}
 
 from fastapi import UploadFile, File
-import whisper
+from openai import OpenAI
 from utils.tts_clova import clova_tts
 from datetime import datetime
 
@@ -163,21 +175,36 @@ async def voice_chat(
         shutil.copyfileobj(file.file, tmp)
         audio_path = tmp.name
 
-    # 2. Whisper로 텍스트 변환
-    model = whisper.load_model("base")
-    result = model.transcribe(audio_path)
-    input_text = result["text"]
+    # 2. Whisper로 텍스트 변환 (OpenAI API 사용)
 
-    # 3. GPT 응답 생성
+    from utils.tts_clova import get_openai_client
+
+    client = get_openai_client()
+
+    with open(audio_path, "rb") as audio_file:
+        input_text = client.audio.transcriptions.create(
+            model="whisper-1",
+            file=audio_file,
+            response_format="text"
+        )
+
+    # 3. GPT 응답 생성 (공통 로직 재사용)
     from chat import generate_response_from_input
-    from chat import TherapySimulation
-    sim = TherapySimulation(
-        persona=persona, chatId=chatId, userId=userId,
-        name=name, age=age, gender=gender
+    response_data = generate_response_from_input(
+        persona=persona,
+        chatId=chatId,
+        userId=userId,
+        message=input_text,
+        name=name,
+        age=age,
+        gender=gender,
     )
-    result = sim.counselor_agent.generate_response(sim.history, input_text)
-    bot_response = result["reply"]
-    emotion = result["analysis"].get("감정", "없음")
+    if isinstance(response_data, dict):
+        bot_response = response_data.get("reply", "")
+        emotion = response_data.get("analysis", {}).get("감정", "없음")
+    else:
+        bot_response = response_data
+        emotion = "없음"
 
     # 4. Clova TTS
     from config import AUDIO_DIR
@@ -188,8 +215,25 @@ async def voice_chat(
     return {
         "userId": userId,
         "chatId": chatId,
-        "transcribedInput": input_text,
+        "message": input_text,
         "botResponse": bot_response,
-        "audio_response_url": f"http://43.200.169.229:8000/static/{mp3_filename}",
+        "audioResponse": f"http://127.0.0.1:8000/static/{mp3_filename}",
         "timestamp": datetime.now().isoformat()
     }
+
+class ReportRequest(BaseModel):
+    userId: int
+    chatId: int
+
+@app.post("/generate_report/")
+async def generate_report_post(request: ReportRequest):
+    try:
+        print("🚀 Report 요청:", request.chatId, request.userId)
+        report = generate_and_save_report(chat_id=request.chatId, user_id=request.userId)
+        print("✅ Report 생성 완료")
+        return report
+
+    except Exception as e:
+        print("❗ 예외 발생:", str(e))  # ✅ 여기에 로그 출력
+        raise HTTPException(status_code=500, detail=str(e))
+
