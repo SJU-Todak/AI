@@ -1,24 +1,24 @@
 from pymongo import MongoClient
 from datetime import datetime
+import os
 from config import load_config
 
-# 🔹 YAML 설정 파일에서 MongoDB URI 불러오기
+
+# YAML 설정 파일에서 MongoDB URI를 가져오기
 config = load_config()
 mongo_uri = config["mongodb"]["uri"]
-
-# 🔹 MongoDB 연결 및 컬렉션 정의
+# MongoDB 클라이언트 연결
 client = MongoClient(mongo_uri)
-db = client['mindAI']
-
-chat_collection = db['chat_logs']           # 상담 대화 로그
-user_collection = db['users']               # 사용자 정보
+db = client['mindAI']  # 'mindAI' 데이터베이스 사용
+chat_collection = db['chat_logs']  # 'chat_logs' 컬렉션 사용
+user_collection = db['users']  # 사용자 정보 저장을 위한 컬렉션
 analysis_collection = db['analysis_reports']  # 분석 리포트 저장용
 
-# ✅ 채팅 로그 저장 함수
+# 채팅 로그 저장 함수
 def save_chat_log(userId, chatId, user_message, bot_response):
     """
     사용자의 메시지와 챗봇의 응답을 채팅 로그에 저장
-    """
+    """ 
     chat_collection.update_one(
         {"chatId": chatId, "userId": userId},
         {
@@ -30,19 +30,23 @@ def save_chat_log(userId, chatId, user_message, bot_response):
         },
         upsert=True
     )
-    print(f"[chat_logs] Chat log saved for chatId={chatId}, userId={userId}")
+    print(f"Chat log for chatId {chatId} has been saved successfully!")
 
-# ✅ 채팅 로그 불러오기
+# 채팅 로그 불러오기 함수
 def get_chat_log(chatId):
     """
     특정 chat_id에 대한 채팅 로그를 불러옴
     """
-    chat_doc = chat_collection.find_one({"chatId": chatId})
-    if chat_doc:
-        return chat_doc.get("messages", [])
-    return None
+    chat_log = chat_collection.find_one({"chatId": chatId})
+    if chat_log:
+        return chat_log['messages']  # 메시지 목록 반환
+    else:
+        return None
+"""
+사용자 정보는 실제 서비스 시에는 백엔드 서버로부터 전달받을 예정, 현재는 임시로저장하는거
+"""
 
-# ✅ 사용자 정보 저장
+# 사용자 정보 저장 함수
 def save_user_info(userId, name, age, gender):
     """
     사용자 정보를 DB에 저장
@@ -54,24 +58,54 @@ def save_user_info(userId, name, age, gender):
         "gender": gender
     }
     user_collection.update_one(
-        {"userId": userId},
-        {"$set": userInfo},
-        upsert=True
+        {"userId": userId},  # user_id가 존재하는지 확인
+        {"$set": userInfo},    # 사용자 정보 업데이트
+        upsert=True  # user_id가 없다면 새로 추가
     )
-    print(f"[users] User info saved for userId={userId}")
+    print(f"User info for {userId} has been saved successfully!")
 
-# ✅ 사용자 정보 불러오기
+# 사용자 정보 불러오기 함수
 def get_user_info(userId):
     """
     특정 user_id에 대한 사용자 정보를 불러옴
     """
-    return user_collection.find_one({"userId": userId})
+    userInfo = user_collection.find_one({"userId": userId})
+    if userInfo:
+        return userInfo  # 사용자 정보 반환
+    else:
+        return None
+    
+   
+def save_analysis_report(userId, chatId, topic, emotion, distortion, mainMission, subMission, timestamp):
+    """
+    분석 결과를 DB에 저장 (존재 시 업데이트, 없으면 생성)
+    """
+    analysis_doc = {
+        "userId": userId,
+        "chatId": chatId,
+        "topic": topic,
+        "emotion": emotion,
+        "distortion": distortion,
+        "mainMission": mainMission,
+        "subMission": subMission,
+        "timestamp": datetime.now().isoformat()
+    }
+    analysis_collection.update_one(
+        {"userId": userId, "chatId": chatId},
+        {"$set": analysis_doc},
+        upsert=True
+    )
+    print(f"analysis report for {chatId} has been saved successfully!")
 
-# ✅ 분석 리포트 저장
-def save_analysis_report(report: dict):
+
+
+# 분석 리포트 불러오기 함수
+def get_analysis_report(userId, chatId):
     """
-    분석 레포트를 analysis_reports 컬렉션에 저장
+    특정 userId와 chatId에 해당하는 분석 리포트를 불러옴
     """
-    report["timestamp"] = datetime.now().isoformat()
-    analysis_collection.insert_one(report)
-    print(f"[analysis_reports] Report saved for chatId={report.get('chatId')}, userId={report.get('userId')}")
+    report = analysis_collection.find_one({"userId": userId, "chatId": chatId})
+    if report:
+        return report
+    else:
+        return None
