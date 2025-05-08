@@ -31,16 +31,33 @@ import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from chat import generate_response_from_input
-from DB import save_user_info, get_user_info, get_chat_log
+from DB import save_user_info, get_user_info, get_chat_log, save_analysis_report
 from starter.generate_greet import generate_greet, load_prompt
 from typing import Optional
 from agents.counselor_agent import CounselorAgent
 from datetime import datetime
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+from report import generate_analysis_report  
+  
 
 app = FastAPI()
 
+# 허용할 origin 목록
+origins = [
+    "http://43.200.169.229:8000",  # 프론트엔드 주소 (예시)
+    "https://test-sso.online",  # 실제 서버 도메인
+]
+
+# CORS 미들웨어 추가
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,            # 허용할 Origin
+    allow_credentials=True,
+    allow_methods=["*"],              # 허용할 HTTP 메서드 (GET, POST 등)
+    allow_headers=["*"],              # 허용할 헤더
+)
 # static 폴더 서빙 추가
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -105,97 +122,41 @@ class GreetRequest(BaseModel):
     name: str
     age: int
     gender: str
-    topic: str
-    emotion: str
-    distortion: str
-    mainMission: str
-    subMission: str
-    calendar: str
-
+    
+from starter.generate_greet import run_generate_greet
 @app.post("/generate_greet")
 async def generate_greet_endpoint(request: GreetRequest):
-
-    chat_log = get_chat_log(request.chatId)
-    recent_persona = None
-    for message in reversed(chat_log):
-        if message.get("role") == "counselor" and "persona" in message:
-            recent_persona = message["persona"]
-            break
-
-    if not recent_persona:
-        raise ValueError("최근 페르소나 정보를 찾을 수 없습니다.")
-
-    persona_path = f"prompts/{recent_persona}.txt"
-    persona = load_prompt(persona_path)
-    prompt_path = "starter/first.txt"
-    prompt_template = load_prompt(prompt_path)
-
-    filled_prompt = prompt_template.format(
-        persona=persona,
-        topic = request.topic,
-        emotion=request.emotion,
-        distortion=request.distortion,
-        mainMission=request.mainMission,
-        subMission=request.subMission,
-        calendar=request.calendar
-    )
-
-    reply = generate_greet(filled_prompt, request.userId, request.chatId)
-    return {
-        "userId": request.userId,
-        "chatId": request.chatId,
-        "greeting": reply,
-        "timestamp": datetime.now().isoformat()
-    }
+    return run_generate_greet(request.userId, request.chatId, request.name, request.age, request.gender)
 
 @app.get("/docs")
 def get_docs():
     return {"message": "Swagger UI will be here!"}
 
-from fastapi import UploadFile, File
 from openai import OpenAI
 from utils.tts_clova import clova_tts
-from datetime import datetime
+
+class VoiceChatRequest(BaseModel):
+    userId: int
+    chatId: int
+    persona: str
+    message: str
+    name: str
+    age: int
+    gender: str
 
 @app.post("/voice_chat")
-async def voice_chat(
-    userId: int,
-    chatId: int,
-    persona: str,
-    name: str,
-    age: int,
-    gender: str,
-    file: UploadFile = File(...)
-):
-    # 1. 음성 파일 저장
-    import tempfile, shutil
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
-        shutil.copyfileobj(file.file, tmp)
-        audio_path = tmp.name
-
-    # 2. Whisper로 텍스트 변환 (OpenAI API 사용)
-
-    from utils.tts_clova import get_openai_client
-
-    client = get_openai_client()
-
-    with open(audio_path, "rb") as audio_file:
-        input_text = client.audio.transcriptions.create(
-            model="whisper-1",
-            file=audio_file,
-            response_format="text"
-        )
+async def voice_chat(request: VoiceChatRequest):
 
     # 3. GPT 응답 생성 (공통 로직 재사용)
     from chat import generate_response_from_input
     response_data = generate_response_from_input(
-        persona=persona,
-        chatId=chatId,
-        userId=userId,
-        message=input_text,
-        name=name,
-        age=age,
-        gender=gender,
+        persona=request.persona,
+        chatId=request.chatId,
+        userId=request.userId,
+        message=request.message,
+        name=request.name,
+        age=request.age,
+        gender=request.gender,
     )
     if isinstance(response_data, dict):
         bot_response = response_data.get("reply", "")
@@ -206,15 +167,47 @@ async def voice_chat(
 
     # 4. Clova TTS
     from config import AUDIO_DIR
-    mp3_filename = f"voice_response_{userId}_{chatId}.mp3"
+    mp3_filename = f"voice_response_{request.userId}_{request.chatId}.mp3"
     mp3_path = AUDIO_DIR / mp3_filename
-    clova_tts(bot_response, persona_type=persona, emotion=emotion, output_path=str(mp3_path))
+    clova_tts(bot_response, persona_type=request.persona, emotion=emotion, output_path=str(mp3_path))
 
     return {
-        "userId": userId,
-        "chatId": chatId,
-        "message": input_text,
+        "userId": request.userId,
+        "chatId": request.chatId,
         "botResponse": bot_response,
         "audioResponse": f"http://127.0.0.1:8000/static/{mp3_filename}",
         "timestamp": datetime.now().isoformat()
     }
+
+from report import generate_analysis_report
+class ReportRequest(BaseModel):
+    userId: int
+    chatId: int
+
+@app.post("/generate_report/")
+async def generate_report_post(request: ReportRequest):
+    try:
+        print("🚀 Report 요청:", request.chatId, request.userId)
+
+        report = generate_analysis_report(chatId=request.chatId, userId=request.userId)
+
+        save_analysis_report(
+            chatId=request.chatId,
+            userId=request.userId,
+            topic=report["missionTopic"],
+            emotion=report["missionEmotion"],
+            distortion=report["missionDistortion"],
+            mainMission=report["mainMission"],
+            subMission=report["subMission"],
+            timestamp=str(datetime.now())
+        )
+        return {
+            "userId": request.userId,
+            "chatId": request.chatId,
+            "timestamp": str(datetime.now()),
+            "report": report
+        }
+
+    except Exception as e:
+        print("❗ 예외 발생:", str(e))  # ✅ 여기에 로그 출력
+        raise HTTPException(status_code=500, detail=str(e))

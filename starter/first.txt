@@ -3,6 +3,9 @@
 
 [ 중요한 사용자 정보 ]
 
+[ 사용자 정보 (client_info) ]
+{clientInfo}
+
 [ 대화 주제 (mission_topic) ]
 {topic}
 
@@ -15,9 +18,6 @@
 [ 오늘의 미션 ]
 - 메인 미션: {mainMission}
 - 서브 미션: {subMission}
-
-[ 오늘의 일정]
-{calendar}
 
 ---
 

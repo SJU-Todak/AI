@@ -12,6 +12,7 @@ client = MongoClient(mongo_uri)
 db = client['mindAI']  # 'mindAI' 데이터베이스 사용
 chat_collection = db['chat_logs']  # 'chat_logs' 컬렉션 사용
 user_collection = db['users']  # 사용자 정보 저장을 위한 컬렉션
+analysis_collection = db['analysis_reports']  # 분석 리포트 저장용
 
 # 채팅 로그 저장 함수
 def save_chat_log(userId, chatId, user_message, bot_response):
@@ -75,19 +76,40 @@ def get_user_info(userId):
         return None
     
    
-"""
+def save_analysis_report(userId, chatId, topic, emotion, distortion, mainMission, subMission, timestamp):
+    """
+    분석 리포트를 reports 배열에 누적 저장
+    """
+    doc = analysis_collection.find_one({"userId": userId, "chatId": chatId})
+    existing_reports = doc["reports"] if doc and "reports" in doc else []
+    reportId = len(existing_reports) + 1
 
-def save_analysis(userId: int, chatId: int, topic: str, emotion: list, distortion: list, mainMission: list, subMission: list):
-    analysis_doc = {
-        "userId": userId,
-        "chatId": chatId,
-        "timestamp": datetime.now().isoformat(),
+    new_report = {
+        "reportId": reportId,
         "topic": topic,
         "emotion": emotion,
         "distortion": distortion,
         "mainMission": mainMission,
-        "subMission": subMission
+        "subMission": subMission,
+        "timestamp": timestamp
     }
-    analysis_collection.insert_one(analysis_doc)
-    print(f"Analysis for chatId {chatId} of userId {userId} has been saved.")
-"""
+
+    analysis_collection.update_one(
+        {"userId": userId, "chatId": chatId},
+        {"$push": {"reports": new_report}},
+        upsert=True
+    )
+    print(f"analysis report for chatId {chatId} has been appended successfully!")
+
+
+
+# 분석 리포트 불러오기 함수
+def get_analysis_report(userId, chatId):
+    """
+    특정 userId와 chatId에 해당하는 분석 리포트 중 reportId가 가장 큰 것(최신)을 불러옴
+    """
+    doc = analysis_collection.find_one({"userId": userId, "chatId": chatId})
+    if doc and "reports" in doc and isinstance(doc["reports"], list) and doc["reports"]:
+        latest_report = max(doc["reports"], key=lambda r: r.get("reportId", 0))
+        return latest_report
+    return None
