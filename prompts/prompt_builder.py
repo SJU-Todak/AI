@@ -22,20 +22,11 @@ def load_prompt(category: str, key: str) -> str:
     with open(prompt_path, "r", encoding="utf-8") as f:
         return f.read().strip()
 
-def build_prompt_with_strategies(reaction_type: str, stage: str, approach: str) -> str:
-    """
-    반응유형, 상담단계, 상담접근법에 따라 세 가지 프롬프트 조각을 불러와 하나로 결합한다.
-    감정과 인지왜곡은 여기 포함하지 않음.
-    """
-    reaction_prompt = load_prompt("react", reaction_type)
-    stage_prompt = load_prompt("stage", stage)
-    approach_prompt = load_prompt("cure", approach)
-
-
-
-    # 순서: 상담단계 → 반응유형 → 상담접근법
-    combined_prompt = "\n\n".join([
-        part for part in [stage_prompt, reaction_prompt, approach_prompt] if part
-    ])
-    # print("🧾 [최종 조합된 프롬프트]:", combined_prompt[:80], "...")
+def build_prompt_with_strategies(reaction_type: str, stage: str, approach: str, order=("stage", "react", "cure")):
+    prompt_map = {
+        "stage": load_prompt("stage", stage),
+        "react": load_prompt("react", reaction_type),
+        "cure": load_prompt("cure", approach),
+    }
+    combined_prompt = "\n\n".join([prompt_map[k] for k in order if prompt_map[k]])
     return combined_prompt
