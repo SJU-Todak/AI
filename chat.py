@@ -8,10 +8,13 @@ from config import get_config, set_openai_api_key
 from DB import get_chat_log, save_chat_log
 from fastapi import FastAPI, HTTPException
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import os
+from agents.subllm_agent import classify_topic # 새로 만든 함수가 있는 파일에서 import
+
 # API 키 설정
 set_openai_api_key()
+kst = timezone(timedelta(hours=9))
 
 # TherapySimulation 클래스에서 사용자 정보 확인
 class TherapySimulation:
@@ -41,22 +44,25 @@ class TherapySimulation:
         self.evaluator_agent = EvaluatorAgent()
 
     def run_single_turn(self, message: str):
-        timestamp = datetime.now().isoformat()
+        timestamp = datetime.now(kst).isoformat()
         result = self.counselor_agent.generate_response(self.history, message)
         reply = result["reply"]
         analysis = result.get("analysis", {})
+
+        topic_result = classify_topic(message)
 
         user_entry = {
             "role": "client",
             "message": message,
             "timestamp": timestamp,
-            "analysis": analysis
+            "analysis": analysis,
+            "topic": topic_result
         }
 
         bot_entry = {
             "role": "counselor",
             "message": reply,
-            "timestamp": datetime.now().isoformat(),
+            "timestamp":datetime.now(kst).isoformat(),
             "persona": self.persona  # 현재 사용된 페르소나 저장
         }
 
