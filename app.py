@@ -97,7 +97,7 @@ async def start_chat_endpoint(request: ChatRequest):
     return {
         "userId" : request.userId,
         "chatId" : request.chatId,
-        "botResponse": botResponse,
+        "botResponse": botResponse["reply"],
         "timestamp" : datetime.now().isoformat()
     }
 
@@ -184,8 +184,9 @@ class VoiceChatRequest(BaseModel):
 @app.post("/voice_chat")
 async def voice_chat(request: VoiceChatRequest):
 
-    # 3. GPT 응답 생성 (공통 로직 재사용)
     from chat import generate_response_from_input
+    
+    # 1. GPT 응답 생성
     response_data = generate_response_from_input(
         persona=request.persona,
         chatId=request.chatId,
@@ -195,17 +196,20 @@ async def voice_chat(request: VoiceChatRequest):
         age=request.age,
         gender=request.gender,
     )
+
+
     if isinstance(response_data, dict):
         bot_response = response_data.get("reply", "")
-        emotion = response_data.get("analysis", {}).get("감정", "없음")
+        emotion = response_data.get("emotion", "없음")
     else:
         bot_response = response_data
         emotion = "없음"
 
-    # 4. Clova TTS
+    # 4. Clova TTS 생성
     from config import AUDIO_DIR
     mp3_filename = f"voice_response_{request.userId}_{request.chatId}.mp3"
     mp3_path = AUDIO_DIR / mp3_filename
+
     clova_tts(bot_response, persona_type=request.persona, emotion=emotion, output_path=str(mp3_path))
 
     return {
@@ -215,6 +219,7 @@ async def voice_chat(request: VoiceChatRequest):
         "audioResponse": f"http://127.0.0.1:8000/static/{mp3_filename}",
         "timestamp": datetime.now().isoformat()
     }
+
 
 from report import generate_analysis_report
 class ReportRequest(BaseModel):

@@ -41,29 +41,31 @@ class TherapySimulation:
         self.evaluator_agent = EvaluatorAgent()
 
     def run_single_turn(self, message: str):
-        timestamp = datetime.now().isoformat()
         result = self.counselor_agent.generate_response(self.history, message)
         reply = result["reply"]
-        analysis = result.get("analysis", {})
+        analysis = result["analysis"]
 
         user_entry = {
             "role": "client",
             "message": message,
-            "timestamp": timestamp,
+            "timestamp": datetime.now().isoformat(),
             "analysis": analysis
         }
-
         bot_entry = {
             "role": "counselor",
             "message": reply,
             "timestamp": datetime.now().isoformat(),
-            "persona": self.persona  # 현재 사용된 페르소나 저장
+            "persona": self.persona
         }
 
         self.history.extend([user_entry, bot_entry])
         save_chat_log(self.userId, self.chatId, user_entry, bot_entry)
 
-        return reply
+        # ✅ 핵심: 감정만 외부에서 쓰기 위해 반환
+        return {
+            "reply": reply,
+            "emotion": analysis.get("감정", "없음")
+        }
 
 def generate_response_from_input(persona: str, chatId: int, userId: int, name: str, age: int, 
                                  gender: str, message: str):
