@@ -49,6 +49,7 @@ app = FastAPI()
 # 허용할 origin 목록
 origins = [
     "http://43.200.169.229:8000",  # 프론트엔드 주소 (예시)
+    "https://todak2-ai.site",
     "https://test-sso.online",  # 실제 서버 도메인
 ]
 
@@ -100,7 +101,7 @@ async def start_chat_endpoint(request: ChatRequest):
     return {
         "userId" : request.userId,
         "chatId" : request.chatId,
-        "botResponse": botResponse,
+        "botResponse": botResponse["reply"],
         "timestamp": datetime.now(kst).isoformat()
     }
 
@@ -163,7 +164,7 @@ async def voice_chat(request: VoiceChatRequest):
     )
     if isinstance(response_data, dict):
         bot_response = response_data.get("reply", "")
-        emotion = response_data.get("analysis", {}).get("감정", "없음")
+        emotion = response_data.get("emotion", "없음")
     else:
         bot_response = response_data
         emotion = "없음"
@@ -178,7 +179,7 @@ async def voice_chat(request: VoiceChatRequest):
         "userId": request.userId,
         "chatId": request.chatId,
         "botResponse": bot_response,
-        "audioResponse": f"http://43.200.169.229:8000/static/{mp3_filename}",
+        "audioResponse": f"https://todak2-ai.site/static/{mp3_filename}",
         "timestamp": datetime.now(kst).isoformat()
     }
 
