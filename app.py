@@ -181,6 +181,8 @@ class VoiceChatRequest(BaseModel):
     age: int
     gender: str
 
+from datetime import datetime
+
 @app.post("/voice_chat")
 async def voice_chat(request: VoiceChatRequest):
 
@@ -197,7 +199,6 @@ async def voice_chat(request: VoiceChatRequest):
         gender=request.gender,
     )
 
-
     if isinstance(response_data, dict):
         bot_response = response_data.get("reply", "")
         emotion = response_data.get("emotion", "없음")
@@ -207,7 +208,8 @@ async def voice_chat(request: VoiceChatRequest):
 
     # 4. Clova TTS 생성
     from config import AUDIO_DIR
-    mp3_filename = f"voice_response_{request.userId}_{request.chatId}.mp3"
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    mp3_filename = f"voice_response_{request.userId}_{request.chatId}_{timestamp}.mp3"
     mp3_path = AUDIO_DIR / mp3_filename
 
     clova_tts(bot_response, persona_type=request.persona, emotion=emotion, output_path=str(mp3_path))
@@ -219,6 +221,7 @@ async def voice_chat(request: VoiceChatRequest):
         "audioResponse": f"http://127.0.0.1:8000/static/{mp3_filename}",
         "timestamp": datetime.now().isoformat()
     }
+
 
 
 from report import generate_analysis_report

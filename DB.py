@@ -9,7 +9,7 @@ config = load_config()
 mongo_uri = config["mongodb"]["uri"]
 # MongoDB 클라이언트 연결
 client = MongoClient(mongo_uri)
-db = client['mindAI']  # 'mindAI' 데이터베이스 사용
+db = client['todaki-db']  # 'mindAI' 데이터베이스 사용
 chat_collection = db['chat_logs']  # 'chat_logs' 컬렉션 사용
 user_collection = db['users']  # 사용자 정보 저장을 위한 컬렉션
 analysis_collection = db['analysis_reports']  # 분석 리포트 저장용

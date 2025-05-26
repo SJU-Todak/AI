@@ -15,6 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 4. 소스 코드 복사
 COPY . .
 
+# 👇 이 줄 추가
+COPY conf.d/config.yaml /app/conf.d/config.yaml
+
 # 5. FastAPI 기본 포트 열기
 EXPOSE 8000
 
